@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -42,6 +43,9 @@ module.exports = {
       title: 'Hello Webpack bundled JavaScript Project',
       template: path.resolve(__dirname, '..', './src/html/index.html'),
     }),
+    // new CopyPlugin({
+    //   patterns: [{ from: './images', to: './src/images' }],
+    // }),
   ],
   resolve: {
     extensions: ['*', '.js'],

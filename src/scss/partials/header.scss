@@ -2,5 +2,39 @@
 @use '../global/mixins.scss' as *;
 
 .header {
-  background: $light-grey;
+  background: $white;
+  padding: 24px 0;
+  border-bottom: 5px solid $black;
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  &__col {
+    overflow: hidden;
+    padding: 0;
+  }
+}
+
+.logo__link {
+  padding: 5px;
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: -100%;
+    height: 5px;
+    width: 100%;
+    transition: all 300ms;
+    background: $black;
+  }
+  &:hover,
+  &:focus {
+    &:after {
+      left: 0;
+    }
+  }
 }

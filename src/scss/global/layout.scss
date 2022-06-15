@@ -22,12 +22,19 @@ body {
   padding: 0;
 }
 
+main {
+  @include tablet-landscape-up {
+    padding-top: 129.63px;
+  }
+}
+
 .section {
   $self: &;
   position: relative;
   width: 100%;
   &--fullscreen {
-    height: calc(100vh - 90.5px);
+    @extend .section;
+    height: calc(100vh - 129.63px);
     #{$self}__wrapper,
     #{$self}__row {
       height: 100%;

@@ -22,86 +22,98 @@ p {
 
 h1,
 .h1 {
-  @include heading-style(64px, $heading-font-family, 900);
+  @include heading-style(36px);
   @include tablet-portrait-up {
-    font-size: 36px;
+    @include heading-style;
+  }
+  &--special {
+    @extend .h1;
+    @include heading-style(
+      $font-family: $special-font-family,
+      $text-transform: none
+    );
   }
 }
 
 h2,
 .h2 {
-  @include heading-style(48px, $heading-font-family, 900);
   // letter-spacing: 0.02px;
+  @include heading-style(34px);
   @include tablet-portrait-up {
-    font-size: 34px;
+    @include heading-style(48px);
+  }
+  &--special {
+    @extend .h2;
+    @include heading-style(
+      $font-family: $special-font-family,
+      $text-transform: none
+    );
   }
 }
 
 h3,
 .h3 {
-  @include heading-style(36px, $base-font-family, 300);
+  @include heading-style(24px);
   @include tablet-portrait-up {
-    font-size: 24px;
+    @include heading-style(36px);
+  }
+  &--special {
+    @extend .h3;
+    @include heading-style(
+      $font-family: $special-font-family,
+      $text-transform: none
+    );
   }
 }
 
 h4,
 .h4 {
-  @include heading-style(24px, $base-font-family, 500);
+  @include heading-style(18px);
   @include tablet-portrait-up {
-    font-size: 18px;
+    @include heading-style(24px);
+  }
+  &--special {
+    @extend .h4;
+    @include heading-style(
+      $font-family: $special-font-family,
+      $text-transform: none
+    );
   }
 }
 
 h5,
 .h5 {
-  @include heading-style(24px, $base-font-family, 400);
-  text-transform: none;
-  line-height: 32px;
+  @include heading-style(16px);
   @include tablet-portrait-up {
-    font-size: 16px;
+    @include heading-style(24px);
+  }
+  &--special {
+    @extend .h5;
+    @include heading-style(
+      $font-family: $special-font-family,
+      $text-transform: none
+    );
   }
 }
 
 h6,
 .h6 {
-  @include heading-style(14px, $base-font-family, 500);
+  @include heading-style(14px);
+  &--special {
+    @extend .h6;
+    @include heading-style(
+      $font-family: $special-font-family,
+      $text-transform: none
+    );
+  }
 }
 
-a,
-.styled-btn {
+.link {
   color: $black;
-  transition: all $base-duration $base-timing;
-  padding: 3px;
-  background: transparent;
-  line-height: 1;
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border: none;
-  z-index: 1;
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transform: translateX(-101%);
-    transition: all $base-duration $base-timing;
-    background: $black;
-    z-index: -1;
-  }
+  text-decoration: underline;
   &:hover,
   &:focus {
-    color: $off-white;
-    &::before {
-      transform: translateX(0%);
-    }
-  }
-  &:focus {
-    outline: $focus-outline;
-    outline-offset: 1px;
+    color: $red;
   }
 }
 

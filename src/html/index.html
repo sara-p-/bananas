@@ -12,11 +12,11 @@
       <div class="header__wrapper">
         <div class="header__row">
           <div class="header__col">
-            <a href="/" class="logo">
+            <a href="/" class="logo__link">
               <img
-                src="<%=require('../../images/placeholder-logo.svg')%>"
-                alt="Logo"
-                class="logo__image"
+                src="<%=require('../../images/banana.svg')%>"
+                alt="Bananas Home"
+                class="logo logo--1"
               />
             </a>
           </div>
@@ -24,37 +24,20 @@
       </div>
     </header>
     <main>
-      <section class="section">
+      <section id="section1" class="section1 section--fullscreen">
+        <div class="section__wrapper">
+          <figure class="section1--gem1"></figure>
+        </div>
+      </section>
+      <section id="section2" class="section--fullscreen">
         <div class="section__wrapper">
           <div class="section__row">
             <div class="section__col">
-              <h1>Project Title</h1>
-            </div>
-            <div class="section__col">
-              <img
-                class="image--contain"
-                src="<%=require('../../images/folder.svg')%>"
-                alt="folder"
-              />
+              <h1>Goodbye World</h1>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="footer__wrapper">
-        <div class="footer__row">
-          <div class="footer__col">
-            <a href="/" class="logo">
-              <img
-                src="<%=require('../../images/placeholder-logo.svg')%>"
-                alt="Home"
-                class="logo__image"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>

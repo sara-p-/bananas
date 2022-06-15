@@ -19,9 +19,31 @@ img {
   }
 }
 
-.logo__image {
-  max-width: 130px;
+.logo {
+  max-width: 75;
+  padding: 8px 0;
   @include tablet-portrait-up {
-    max-width: 200px;
+    max-width: 100px;
+  }
+}
+
+// Backgrounds
+
+.background {
+  &--full {
+    @include absolute;
+  }
+}
+
+.background__image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  &--space-fade {
+    @extend .background__image;
+    background-image: url('../../images/space-fade.svg');
+  }
+  &--space {
+    @extend .background__image;
+    background-image: url('../../images/space.svg');
   }
 }

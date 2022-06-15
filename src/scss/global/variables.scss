@@ -1,9 +1,10 @@
 @use 'sass:math';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Playfair+Display&family=Roboto&display=swap');
 
 // Fonts
-$base-font-family: 'Montserrat', sans-serif;
-$heading-font-family: $base-font-family;
+$base-font-family: 'Roboto', sans-serif;
+$heading-font-family: 'Oswald', sans-serif;
+$special-font-family: 'Playfair Display', serif;
 
 // Font Size
 $base-font-size: 16px;
@@ -20,6 +21,7 @@ $base-font-weight: 400;
 $heading-font-weight: 900;
 
 // Site Width
+$site-width-extra-large: 1905px;
 $site-width-large: 1400px;
 $site-width-medium: 1040px;
 $site-width-small: 840px;
@@ -47,7 +49,20 @@ $grey: #797979;
 $light-purple: #eacbef;
 $light-pink: #ffa4a4;
 $red: #e74c3c;
-$blue: blue;
+
+// Bananas Colors
+$purple: #9b5de5;
+$pink: #f15bb5;
+$yellow: #fee440;
+$blue: #00bbf9;
+$green: #00f5d4;
+
+// Chill Colors
+$color-0: #edede9;
+$color-1: #d6ccc2;
+$color-2: #f5ebe0;
+$color-3: #e3d5ca;
+$color-4: #d5bdaf;
 
 $links: $black;
 $hover: $black;

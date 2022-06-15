@@ -41,4 +41,10 @@
       content: '\f078';
     }
   }
+  &--banana {
+    @extend .icon;
+    &:after {
+      content: '\e2e5';
+    }
+  }
 }
