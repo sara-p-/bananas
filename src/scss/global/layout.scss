@@ -23,8 +23,48 @@ body {
 }
 
 main {
-  @include tablet-landscape-up {
-    padding-top: 129.63px;
+  height: auto;
+  // @include tablet-landscape-up {
+  //   padding-top: 129.63px;
+  // }
+}
+
+.frame {
+  position: fixed;
+  pointer-events: none;
+  background: $warm--3;
+  z-index: 5;
+  &--top {
+    @extend .frame;
+    // border-top: $frame-border;
+    height: $spacing-24;
+    width: calc(100% - 48px);
+    top: $spacing-48;
+    left: $spacing-48;
+  }
+  &--right {
+    @extend .frame;
+    // border-right: $frame-border;
+    height: calc(100% - 48px);
+    width: $spacing-24;
+    top: $spacing-24;
+    right: $spacing-24;
+  }
+  &--bottom {
+    @extend .frame;
+    // border-bottom: $frame-border;
+    height: $spacing-24;
+    width: calc(100% - 48px);
+    bottom: $spacing-24;
+    left: $spacing-24;
+  }
+  &--left {
+    @extend .frame;
+    // border-left: $frame-border;
+    height: calc(100% - 48px);
+    width: $spacing-24;
+    top: $spacing-24;
+    left: $spacing-24;
   }
 }
 
@@ -34,7 +74,8 @@ main {
   width: 100%;
   &--fullscreen {
     @extend .section;
-    height: calc(100vh - 129.63px);
+    height: 100vh;
+    // height: calc(100vh - 129.63px);
     #{$self}__wrapper,
     #{$self}__row {
       height: 100%;

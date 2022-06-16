@@ -50,6 +50,13 @@ $light-purple: #eacbef;
 $light-pink: #ffa4a4;
 $red: #e74c3c;
 
+//  Warm
+$warm--1: #ffcdb2;
+$warm--2: #ffb4a2;
+$warm--3: #e5989b;
+$warm--4: #b5838d;
+$warm--5: #6d6875;
+
 // Bananas Colors
 $purple: #9b5de5;
 $pink: #f15bb5;
@@ -115,5 +122,8 @@ $_form-box-shadow-focus: $_form-box-shadow,
   0 0 5px rgba($base-border-color, 0.7);
 $input-padding: 16px 0.8em 14px;
 
-// Grid Settings
-$grid-space: 50px;
+// Box Shadow
+$box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.37);
+
+// Frame Border
+$frame-border: 2px solid $black;
