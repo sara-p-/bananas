@@ -42,9 +42,11 @@ module.exports = {
       title: 'Hello Webpack bundled JavaScript Project',
       template: path.resolve(__dirname, '..', './src/html/index.html'),
     }),
-    // new CopyPlugin({
-    //   patterns: [{ from: './images', to: './src/images' }],
-    // }),
+    new HtmlWebpackPlugin({
+      title: 'Spot',
+      filename: 'spot.html',
+      template: path.resolve(__dirname, '..', './src/html/spot.html'),
+    }),
   ],
   resolve: {
     extensions: ['*', '.js'],

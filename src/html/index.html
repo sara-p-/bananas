@@ -8,47 +8,103 @@
     ></script>
   </head>
   <body>
-    <!-- <header class="header">
-      <div class="header__wrapper">
-        <div class="header__row">
-          <div class="header__col">
-            <a href="/" class="logo__link">
-              <img
-                src="<%=require('../../images/banana.svg')%>"
-                alt="Bananas Home"
-                class="logo logo--1"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </header> -->
     <main>
-      <div class="frame--top"></div>
-      <div class="frame--right"></div>
-      <div class="frame--left"></div>
-      <div class="frame--bottom"></div>
+      <!-- ************** SECTION 1 ************************* -->
       <section id="section1" class="section1 section--fullscreen">
         <div class="section__wrapper">
-          <a href="" class="link--image">
-            <figure class="gem1">
-              <img
-                src="<%=require('../../images/amethyst.svg')%>"
-                alt="Amethyst"
-              />
-            </figure>
-          </a>
-        </div>
-      </section>
-      <section id="section2" class="section--fullscreen">
-        <div class="section__wrapper">
-          <div class="section__row">
-            <div class="section__col">
-              <h1>Goodbye World</h1>
-            </div>
+          <div class="flex-grid">
+            <!-- Gem1 Button -->
+            <button
+              class="flex-grid__item button--image button--blue shape--square gem1"
+            >
+              <figure class="button__figure">
+                <img
+                  class="button__image image--contain"
+                  src="<%=require('../../images/gem--amethyst.svg')%>"
+                  alt="Amethyst"
+                />
+              </figure>
+            </button>
+            <!-- Gem1 Button -->
+            <button
+              class="flex-grid__item button--image button--blue shape--square gem2"
+            >
+              <figure class="button__figure">
+                <img
+                  class="button__image image--contain"
+                  src="<%=require('../../images/gem--amazonite.svg')%>"
+                  alt="Amethyst"
+                />
+              </figure>
+            </button>
+            <!-- Gem1 Button -->
+            <button
+              class="flex-grid__item button--image button--blue shape--square gem3"
+            >
+              <figure class="button__figure">
+                <img
+                  class="button__image image--contain"
+                  src="<%=require('../../images/gem--aragonite.svg')%>"
+                  alt="Amethyst"
+                />
+              </figure>
+            </button>
+            <!-- Gem1 Button -->
+            <button
+              class="flex-grid__item button--image button--blue shape--square gem4"
+            >
+              <figure class="button__figure">
+                <img
+                  class="button__image image--contain"
+                  src="<%=require('../../images/gem--crystal-quartz.svg')%>"
+                  alt="Amethyst"
+                />
+              </figure>
+            </button>
+            <!-- Gem1 Button -->
+            <button
+              class="flex-grid__item button--image button--blue shape--square gem5"
+            >
+              <figure class="button__figure">
+                <img
+                  class="button__image image--contain"
+                  src="<%=require('../../images/gem--malachite.svg')%>"
+                  alt="Amethyst"
+                />
+              </figure>
+            </button>
+            <!-- Gem1 Button -->
+            <button
+              class="flex-grid__item button--image button--blue shape--square gem6"
+            >
+              <figure class="button__figure">
+                <img
+                  class="button__image image--contain"
+                  src="<%=require('../../images/gem--pyrite.svg')%>"
+                  alt="Amethyst"
+                />
+              </figure>
+            </button>
           </div>
         </div>
       </section>
     </main>
+    <!-- Modal--Default -->
+    <div id="modal--default" class="modal modal--default" aria-hidden="true">
+      <div tabindex="-1" data-micromodal-close class="modal__wrapper">
+        <div class="modal__row" role="dialog" aria-modal="true">
+          <div class="modal__content">
+            <button
+              id="modal-1-close"
+              class="button--close modal__button icon--xmark"
+              data-micromodal-close
+            >
+              <span class="visually-hidden">Close Modal</span>
+            </button>
+            <h1>This is a modal</h1>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

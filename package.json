@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "fibers": "^5.0.0",
-    "gsap": "^3.10.4"
+    "gsap": "npm:@gsap/simply@^3.10.4",
+    "micromodal": "^0.4.10"
   }
 }

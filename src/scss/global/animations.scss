@@ -1,0 +1,11 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+@keyframes bg-slide {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-50%); /* The image width */
+  }
+}

@@ -47,4 +47,16 @@
       content: '\e2e5';
     }
   }
+  &--xmark {
+    @extend .icon;
+    &:after {
+      content: '\f00d';
+    }
+    &:hover,
+    &:focus {
+      &:after {
+        color: $blue;
+      }
+    }
+  }
 }

@@ -49,6 +49,7 @@ $grey: #797979;
 $light-purple: #eacbef;
 $light-pink: #ffa4a4;
 $red: #e74c3c;
+$base-blue: #0000ff;
 
 //  Warm
 $warm--1: #ffcdb2;
@@ -96,10 +97,10 @@ $base-border: 2px solid $base-border-color;
 $viewport-background-color: $white;
 
 // Focus
-$focus-outline-color: $blue;
+$focus-outline-color: $purple;
 $focus-outline-width: 3px;
 $focus-outline: $focus-outline-width solid $focus-outline-color;
-$focus-outline-offset: 0px;
+$focus-outline-offset: 3px;
 
 // Transitions
 $base-duration: 300ms;
@@ -127,3 +128,7 @@ $box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.37);
 
 // Frame Border
 $frame-border: 2px solid $black;
+
+// Background animation variables
+$bg-width: 100%;
+$bg-height: auto;

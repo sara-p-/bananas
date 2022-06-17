@@ -111,9 +111,21 @@ h6,
 .link {
   color: $black;
   text-decoration: underline;
+  transition: all 300ms;
+  &:before,
+  &:after {
+    transition: all 300ms;
+  }
   &:hover,
   &:focus {
     color: $red;
+  }
+  &--scale {
+    @extend .link;
+    &:hover,
+    &:focus {
+      transform: scale(1.1, 1.1);
+    }
   }
 }
 

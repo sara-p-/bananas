@@ -66,6 +66,11 @@
   padding: 0;
 }
 
+@mixin focus {
+  outline: $focus-outline;
+  outline-offset: $focus-outline-offset;
+}
+
 @mixin clear-btn() {
   position: relative;
   top: auto;
@@ -88,6 +93,42 @@
   }
 }
 
+// Button base
+@mixin btn-base() {
+  position: relative;
+  display: inline-block;
+  padding: $spacing-8 $spacing-24;
+  text-align: center;
+  font-family: $base-font-family;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  color: $black;
+  background-color: $white;
+  border: 2px solid $black;
+  border-radius: 0;
+  transition: all $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background: $black;
+    color: $white;
+  }
+  &:focus {
+    @include focus;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
 @mixin aspect-ratio($width, $height) {
   // https://css-tricks.com/aspect-ratio-boxes/
   // calc(591.44 / 1127.34 * 100%);
@@ -100,39 +141,7 @@
   justify-content: $justify;
   align-items: $align;
   flex-wrap: $wrap;
-}
-
-// Button base
-@mixin btn-base() {
-  position: relative;
-  display: inline-block;
-  padding: 17px 8px 15px;
-  min-width: 150px;
-  text-align: center;
-  font-family: $base-font-family;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 500;
-  line-height: 1;
-  text-decoration: none;
-  color: $black;
-  background-color: $white;
-  border: $base-border;
-  border-radius: 0;
-  transition: all $base-duration $base-timing;
-  user-select: none;
-  vertical-align: middle;
-  appearance: none;
-  box-sizing: border-box;
-  cursor: pointer;
-  &:focus {
-    outline: $focus-outline;
-    outline-offset: $focus-outline-offset;
-  }
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
+  flex-direction: $dir;
 }
 
 @mixin fake-input-text {
@@ -142,11 +151,6 @@
   line-height: 1;
   margin-bottom: 0;
   text-transform: uppercase;
-}
-
-@mixin focus {
-  outline: $focus-outline;
-  outline-offset: $focus-outline-offset;
 }
 
 @mixin fullscreen {
@@ -162,6 +166,22 @@
   height: 100%;
 }
 
-// @mixin frame($position: top, $color: $white, $border-color: $black) {
-
-// }
+@mixin button-background-slide(
+  $url: '../../images/background--blue-stripe.svg',
+  $speed: 3s
+) {
+  &:before {
+    content: '';
+    @include absolute;
+    width: 200%;
+  }
+  &:hover,
+  &:focus {
+    background: $white;
+    &::before {
+      background-image: url($url);
+      background-repeat: repeat-x;
+      animation: bg-slide $speed linear infinite;
+    }
+  }
+}

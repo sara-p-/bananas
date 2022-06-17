@@ -1,0 +1,13 @@
+@use '../global/variables.scss' as *;
+@use '../global/mixins.scss' as *;
+
+// // Modal Window "Animation"
+// .spot {
+//   width: 100px;
+//   height: 100px;
+//   border-radius: 50px;
+//   &--black {
+//     @extend .spot;
+//     background: $black;
+//   }
+// }

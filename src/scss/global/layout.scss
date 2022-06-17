@@ -20,6 +20,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 main {
@@ -38,33 +39,33 @@ main {
     @extend .frame;
     // border-top: $frame-border;
     height: $spacing-24;
-    width: calc(100% - 48px);
+    width: calc(100% - 96px);
     top: $spacing-48;
     left: $spacing-48;
   }
   &--right {
     @extend .frame;
     // border-right: $frame-border;
-    height: calc(100% - 48px);
+    height: calc(100% - 96px);
     width: $spacing-24;
-    top: $spacing-24;
-    right: $spacing-24;
+    top: $spacing-48;
+    right: $spacing-48;
   }
   &--bottom {
     @extend .frame;
     // border-bottom: $frame-border;
     height: $spacing-24;
-    width: calc(100% - 48px);
-    bottom: $spacing-24;
-    left: $spacing-24;
+    width: calc(100% - 96px);
+    bottom: $spacing-48;
+    left: $spacing-48;
   }
   &--left {
     @extend .frame;
     // border-left: $frame-border;
-    height: calc(100% - 48px);
+    height: calc(100% - 96px);
     width: $spacing-24;
-    top: $spacing-24;
-    left: $spacing-24;
+    top: $spacing-48;
+    left: $spacing-48;
   }
 }
 
@@ -85,7 +86,6 @@ main {
     width: 100%;
     max-width: $site-width-extra-large;
     margin: auto;
-    padding: 0 32px;
   }
   &__row {
     width: 100%;
@@ -109,6 +109,7 @@ main {
 .footer {
   &__wrapper {
     @extend .section__wrapper;
+    padding: 0 $spacing-32;
   }
   &__row {
     @extend .section__row;
@@ -166,18 +167,26 @@ main {
   }
 }
 
+.flex-grid {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: initial;
+  align-items: initial;
+  &__item {
+    position: relative;
+    flex-basis: calc(20% - 10px);
+    margin: 5px;
+    box-sizing: border-box;
+  }
+}
+
 // ********************* GRID ********************** //
-// .grid {
-//   @for $i from 1 through 5 {
-//     &--#{$grid-space * $i} {
-//       grid-template-columns: repeat(auto-fill, minmax($grid-space * $i, 1fr));
-//       grid-template-rows: repeat(auto-fill, minmax($grid-space * $i, 1fr));
-//     }
-//   }
-//   &--column {
-//     grid-auto-flow: column;
-//   }
-// }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0;
+}
 
 // ********************* LAYOUT MODIFIERS ********************** //
 .padding {
@@ -200,5 +209,36 @@ main {
         }
       }
     }
+  }
+}
+
+// ********************* SHAPE MODIFIERS ********************** //
+.shape {
+  &--square {
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+}
+
+// ********************* BORDER MODIFIERS ********************** //
+.border {
+  &--black {
+    border: 5px solid $black;
+  }
+}
+
+// ********************* BACKGROUND MODIFIERS ********************** //
+.background {
+  &--full {
+    @include absolute;
+  }
+  &--base-blue {
+    background: $base-blue;
+  }
+  &--blue {
+    background: $blue;
   }
 }
