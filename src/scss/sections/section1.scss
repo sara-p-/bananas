@@ -13,6 +13,12 @@
   left: 0;
   width: 100%;
   height: auto;
+  &--forwards {
+    @extend .path;
+  }
+  &--reverse {
+    @extend .path;
+  }
 }
 .spot-box {
   width: 100%;

@@ -1,33 +1,57 @@
-<section class="section--fullscreen">
-  <!-- <img
-    class="path spot__path"
-    src="<%=require('../../images/path--bounce-curve.svg')%>"
-    alt=""
-  /> -->
-  <svg class="path" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 664 332.5">
-    <defs>
-      <style>
-        .cls-1 {
-          fill: none;
-          stroke: #000;
-          stroke-miterlimit: 10;
-        }
-      </style>
-    </defs>
-    <path
-      id="path--bounce"
-      class="cls-1"
-      d="M0,.5c183.36,0,332,148.64,332,332C332,149.14,480.64.5,664,.5"
-    />
-    <!-- <g id="Layer_2" data-name="Layer 2">
-      <g id="Layer_5" data-name="Layer 5">
-      </g>
-    </g> -->
-  </svg>
-  <div class="section__wrapper">
-    <div class="spot-box">
-      <div class="spot-box__spot"></div>
-      <div class="spot-box__bar"></div>
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bounce</title>
+    <script
+      src="https://kit.fontawesome.com/d2d9bdc7cf.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <section class="section--fullscreen">
+        <svg
+          class="path--forward"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 664 332.5"
+        >
+          <defs>
+            <style>
+              .cls-1 {
+                fill: none;
+                stroke: none;
+                stroke-miterlimit: 10;
+              }
+            </style>
+          </defs>
+          <path
+            id="path--bounce"
+            class="cls-1"
+            d="M0,.5c183.36,0,332,148.64,332,332C332,149.14,480.64.5,664,.5"
+          />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 664 332.5">
+          <defs>
+            <style>
+              .cls-1 {
+                fill: none;
+                stroke: #000;
+                stroke-miterlimit: 10;
+              }
+            </style>
+          </defs>
+          <path
+            class="path--reverse"
+            d="M664,.5c-183.36,0-332,148.64-332,332C332,149.14,183.36.5,0,.5"
+          />
+        </svg>
+        <div class="section__wrapper">
+          <div class="spot-box">
+            <div class="spot-box__spot"></div>
+            <div class="spot-box__bar"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
