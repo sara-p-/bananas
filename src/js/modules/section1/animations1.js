@@ -2,87 +2,122 @@ import { gsap } from 'gsap'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin.js'
 gsap.registerPlugin(MotionPathPlugin)
 
-export function spotTimeline(pathSelection, callback, var1, var2) {
-  const spot = document.querySelector('.spot-box__spot')
-  const path = document.querySelector(pathSelection)
-  const t1 = gsap.timeline({ paused: true })
+export function spotAnimation() {
+  const track = document.querySelector('.spot__track')
+  const spot = document.querySelector('.spot__item')
+  const pathForward = document.querySelector('.spot__path--forward')
+  const pathReverse = document.querySelector('.spot__path--reverse')
 
-  t1.to(spot, {
-    duration: 6,
-    motionPath: {
-      path: path,
-      align: path,
-      alignOrigin: [0.5, 0.5],
-    },
-  })
+  const moveAmount = track.offsetWidth / 3
+  const trackMove = '-=' + moveAmount
+  const trackMoveBack = '+=' + moveAmount
+  const duration = 4
+
+  const t1 = gsap.timeline({ paused: true, ease: 'power0' })
   t1.to(
     spot,
     {
-      duration: 0,
-      onComplete: callback,
-      onCompleteParams: [var1, var2],
+      duration: duration,
+      motionPath: {
+        path: pathForward,
+        align: pathForward,
+        alignOrigin: [0.5, 0.5],
+      },
     },
-    '<45%'
+    '<60%'
+  )
+  t1.to(
+    track,
+    {
+      left: '-=' + moveAmount,
+      duration: 1,
+    },
+    '<75%'
+  )
+  t1.to(
+    spot,
+    {
+      duration: duration,
+      motionPath: {
+        path: pathForward,
+        align: pathForward,
+        alignOrigin: [0.5, 0.5],
+      },
+    },
+    '<60%'
+  )
+  t1.to(
+    track,
+    {
+      x: trackMove,
+      duration: 1,
+    },
+    '<75%'
+  )
+  t1.to(
+    spot,
+    {
+      duration: duration,
+      motionPath: {
+        path: pathForward,
+        align: pathForward,
+        alignOrigin: [0.5, 0.5],
+      },
+    },
+    '<60%'
+  )
+  t1.to(
+    spot,
+    {
+      duration: duration,
+      motionPath: {
+        path: pathReverse,
+        align: pathReverse,
+        alignOrigin: [0.5, 0.5],
+      },
+    },
+    '<60%'
+  )
+  t1.to(
+    track,
+    {
+      x: trackMoveBack,
+      duration: 1,
+    },
+    '<75%'
+  )
+  t1.to(
+    spot,
+    {
+      duration: duration,
+      motionPath: {
+        path: pathReverse,
+        align: pathReverse,
+        alignOrigin: [0.5, 0.5],
+      },
+    },
+    '<60%'
+  )
+  t1.to(
+    track,
+    {
+      x: trackMoveBack,
+      duration: 1,
+    },
+    '<75%'
+  )
+  t1.to(
+    spot,
+    {
+      duration: duration,
+      motionPath: {
+        path: pathReverse,
+        align: pathReverse,
+        alignOrigin: [0.5, 0.5],
+      },
+    },
+    '<60%'
   )
 
   return t1
 }
-export function spotLastTimeline(callback, var1) {
-  const spot = document.querySelector('.spot-box__spot')
-  const path1 = document.querySelector('#path--forward')
-  const path2 = document.querySelector('#path--reverse')
-  const t1 = gsap.timeline({ paused: true })
-
-  t1.to(spot, {
-    duration: 6,
-    motionPath: {
-      path: path1,
-      align: path1,
-      alignOrigin: [0.5, 0.5],
-    },
-  })
-  t1.to(spot, {
-    duration: 6,
-    motionPath: {
-      path: path2,
-      align: path2,
-      alignOrigin: [0.5, 0.5],
-    },
-  })
-  t1.to(
-    spot,
-    {
-      duration: 0,
-      onComplete: callback,
-      onCompleteParams: [var1],
-    },
-    '<45%'
-  )
-
-  return t1
-}
-
-// Spot Animation (a spot bouncing across multiple windows)
-// export function spotAnimation(callback, var1, var2) {
-//   const spot = document.querySelector('.spot-box__spot')
-//   const path = document.querySelector('#path--bounce')
-//   const t1 = gsap.timeline()
-
-//   t1.to(spot, {
-//     duration: 6,
-//     motionPath: {
-//       path: path,
-//       align: path,
-//       alignOrigin: [0.5, 0.5],
-//     },
-//   })
-//   t1.to(
-//     spot,
-//     {
-//       duration: 0,
-//       onComplete: callback,
-//       onCompleteParams: [var1, var2],
-//     },
-//     '<45%'
-//   )
-// }

@@ -1,9 +1,6 @@
-import {
-  spotAnimation,
-  spotAnimationNew,
-  spotTimeline,
-  spotLastTimeline,
-} from './animations1'
+// import { spotTimeline, spotLastTimeline } from './animations1'
+
+// Variables
 
 // Broadcast Channel
 const bc = new BroadcastChannel('test_channel')
@@ -15,56 +12,72 @@ export function openTab(url, number) {
   const pageNumber = parseInt(urlParams.get('number'))
   let urlQuery
 
-  localStorage.setItem('window-' + pageNumber, 'back')
-
   if (pageNumber < number) {
     urlQuery = '?number=' + (pageNumber + 1)
-    window.open(url + urlQuery, 'window-' + (pageNumber + 1))
+    window.open(url + urlQuery, 'window-' + (pageNumber + 1), 'popup=yes')
   }
 }
 
 // closeTab - Function that closes changes the focus to the previous window and then closes originating tab
 function closeTab(number) {
   let currentWindow = window.open('', 'window-' + number)
-  let previousWindow = window.open('', 'window-' + (number - 1))
-
-  // previousWindow.location.reload()
+  let previous = number - 1
+  let previousWindow = window.open('', 'window-' + previous)
+  // let lastWindow = window.open('', 'window-first')
   previousWindow.focus()
-  currentWindow.close()
+  // currentWindow.close()
 
-  // bc.postMessage('update_direction')
+  if (number !== 0) {
+    bc.postMessage('update_page_direction')
+  }
+}
+
+export function directionBack(url) {
+  bc.onmessage = (messageEvent) => {
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+    const pageNumber = parseInt(urlParams.get('number'))
+    let animationReverse = spotTimeline('#path--reverse', closeTab, pageNumber)
+    if (window.location.pathname.includes(url)) {
+      if (messageEvent.data == 'update_page_direction') {
+        if (pageNumber == 0) {
+          console.log('last page, putting focus on home')
+          window.opener.focus()
+        } else {
+          localStorage.setItem('direction', 'back')
+          animationReverse.play()
+        }
+      }
+    } else {
+      return
+    }
+  }
 }
 
 // multiWindowAnimation - Function that runs certain scripts depending on the current page URL
-export function multiWindowAnimation(target, url, number) {
+export function multiWindowAnimationForward(target, url, number) {
   let currentUrl = window.location.pathname
   const queryString = window.location.search
   const urlParams = new URLSearchParams(queryString)
   const pageNumber = parseInt(urlParams.get('number'))
   let animationForward = spotTimeline('#path--forward', openTab, url, number)
   let animationLast = spotLastTimeline(closeTab, number)
-  let animationReverse = spotTimeline('#path--reverse', closeTab, number, url)
   localStorage.clear()
-  console.log(localStorage)
-
-  bc.onmessage = (messageEvent) => {
-    if (messageEvent.data == 'update_page_direction') {
-    }
-  }
 
   // Is it the Home Page?
   if (currentUrl.includes(url)) {
     if (pageNumber == number) {
       animationLast.play()
-    } else if (localStorage.getItem('window-' + pageNumber) == 'back') {
-      animationReverse.play()
-    } else {
+    } else if (
+      pageNumber !== number &&
+      localStorage.getItem('direction') === null
+    ) {
       animationForward.play()
     }
   } else {
     const button = document.querySelector(target)
     button.addEventListener('click', (e) => {
-      window.open(url + '?number=0')
+      window.open(url + '?number=0', 'window-0', 'popup=yes')
     })
   }
 }
