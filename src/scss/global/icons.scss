@@ -8,7 +8,7 @@
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-solid);
-    color: $black;
+    // color: $black;
     padding-left: $spacing-8;
   }
   &--arrow-long-right {
@@ -51,12 +51,27 @@
     @extend .icon;
     &:after {
       content: '\f00d';
+      padding-left: 0;
     }
-    &:hover,
-    &:focus {
-      &:after {
-        color: $blue;
-      }
+    // &:hover,
+    // &:focus {
+    //   &:after {
+    //     color: $blue;
+    //   }
+    // }
+  }
+  &--pause {
+    @extend .icon;
+    &:after {
+      content: '\f04c';
+      padding-left: 0;
+    }
+  }
+  &--play {
+    @extend .icon;
+    &:after {
+      content: '\f04b';
+      padding-left: 0;
     }
   }
 }

@@ -9,26 +9,4 @@ export function spotVideo(target, id) {
 
   player.load(id)
   player.play()
-
-  // var player
-  // function onYouTubeIframeAPIReady() {
-  //   player = new YT.Player(id, {
-  //     videoId: id,
-  //     playerVars: {
-  //       autoplay: 1,
-  //       controls: 0,
-  //       loop: 0,
-  //       modestbranding: 1,
-  //       playsinline: 0,
-  //       mute: 0,
-  //     },
-  //     events: {
-  //       onReady: onPlayerReady,
-  //     },
-  //   })
-  // }
-
-  // function onPlayerReady(event) {
-  //   event.target.playVideo()
-  // }
 }

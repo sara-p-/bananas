@@ -19,8 +19,8 @@ const spotTrackMoveBack = '+=' + moveAmount
 
 // ********* FUNCTIONS
 // spotContainerOpen - Function to pull out the side panel that holds the spot animation
-export function spotContainerOpen(callback) {
-  const t1 = gsap.timeline({ paused: true })
+export function spotContainerOpen() {
+  const t1 = gsap.timeline()
 
   t1.to(spotContainer, {
     left: '0%',
@@ -29,7 +29,6 @@ export function spotContainerOpen(callback) {
   t1.to(spotWindow, {
     x: '0%',
     duration: 1,
-    onComplete: callback,
   })
 
   return t1
@@ -142,11 +141,13 @@ export function spotAnimation() {
     },
   })
 
+  spotMaster.add(spotContainerOpen())
   spotMaster.add(spotMoveIntro())
   spotMaster.add(spotMoveIntro())
   spotMaster.add(spotMoveMiddle())
   spotMaster.add(spotMoveEnd())
   spotMaster.add(spotMoveEnd(true))
+  spotMaster.add(spotContainerOpen().reverse())
 
   return spotMaster
 }

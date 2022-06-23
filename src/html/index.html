@@ -31,14 +31,16 @@
         <div class="spot">
           <button
             id="spot--pause"
-            class="button spot__close spot__pause button--close"
+            class="button spot__pause icon--pause"
+            data-play-state="playing"
           >
-            <span class="visually-hidden">Pause</span
-            ><i class="fa-solid fa-pause"></i>
+            <span class="visually-hidden">Pause</span>
           </button>
-          <button id="spot--close" class="button spot__close button--close">
-            <span class="visually-hidden">Close</span
-            ><i class="fa-solid fa-xmark"></i>
+          <button
+            id="spot--close"
+            class="button spot__close button--close icon--xmark"
+          >
+            <span class="visually-hidden">Close</span>
           </button>
           <div class="spot__wrapper">
             <div class="spot__window">

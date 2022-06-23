@@ -12,7 +12,7 @@ export default function section1() {
   const spotWindow = document.querySelector('.spot__window')
   const spotIframe = document.querySelector('#spot__iframe--0')
   const spotMaster = spotAnimation()
-  const openPanel = spotContainerOpen()
+  const openPanel = spotContainerOpen().pause()
   const spotVideoPlayer = spotVideo(spotIframe, 'BibG8h__JOE')
 
   gsap.set(spotContainer, {
@@ -23,15 +23,25 @@ export default function section1() {
   })
 
   gem1.addEventListener('click', (e) => {
-    openPanel.add(spotMaster.restart()).play()
+    spotMaster.restart()
     spotVideo(spotIframe, 'BibG8h__JOE')
   })
 
   spotClose.addEventListener('click', (e) => {
     spotMaster.pause()
+    openPanel.reverse()
   })
 
   spotPause.addEventListener('click', (e) => {
-    spotMaster.pause()
+    console.log(spotPause.dataset.playState)
+    if (spotPause.dataset.playState == 'playing') {
+      spotMaster.pause()
+      spotPause.classList.replace('icon--pause', 'icon--play')
+      spotPause.setAttribute('data-play-state', 'paused')
+    } else {
+      spotMaster.resume()
+      spotPause.classList.replace('icon--play', 'icon--pause')
+      spotPause.setAttribute('data-play-state', 'playing')
+    }
   })
 }
