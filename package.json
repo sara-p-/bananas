@@ -39,6 +39,8 @@
   "dependencies": {
     "fibers": "^5.0.0",
     "gsap": "npm:@gsap/simply@^3.10.4",
-    "micromodal": "^0.4.10"
+    "micromodal": "^0.4.10",
+    "youtube-player": "^5.5.2",
+    "yt-player": "^3.5.0"
   }
 }

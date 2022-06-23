@@ -6,6 +6,7 @@
       src="https://kit.fontawesome.com/d2d9bdc7cf.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
   </head>
   <body>
     <main>
@@ -27,8 +28,18 @@
             </button>
           </div>
         </div>
-        <button class="button button--test">Spot</button>
         <div class="spot">
+          <button
+            id="spot--pause"
+            class="button spot__close spot__pause button--close"
+          >
+            <span class="visually-hidden">Pause</span
+            ><i class="fa-solid fa-pause"></i>
+          </button>
+          <button id="spot--close" class="button spot__close button--close">
+            <span class="visually-hidden">Close</span
+            ><i class="fa-solid fa-xmark"></i>
+          </button>
           <div class="spot__wrapper">
             <div class="spot__window">
               <div class="spot__vectors">
@@ -58,7 +69,20 @@
                 </div>
               </div>
               <div class="spot__track">
-                <div class="spot__box spot__box--0"></div>
+                <div id="spot-box-0" class="spot__box spot__box--0">
+                  <div class="spot__video">
+                    <div id="spot__iframe--0" class="spot__iframe"></div>
+                    <!-- <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/BibG8h__JOE"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe> -->
+                  </div>
+                </div>
                 <div class="spot__box spot__box--1"></div>
                 <div class="spot__box spot__box--2"></div>
               </div>

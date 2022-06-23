@@ -1,23 +1,37 @@
 import gsap from 'gsap'
-import { multiWindowAnimationForward, directionBack } from './helpers1'
-import { spotAnimation } from './animations1'
+import { spotAnimation, spotContainerOpen } from './animations1'
+import { spotVideo } from './videos1'
 
 export default function section1() {
-  // Multi box bouncing spot animation
-  const button = document.querySelector('.button--test')
-  const spot = document.querySelector('.spot__item')
-  const pathReverse = document.querySelector('.spot__path--reverse')
-  const animation = spotAnimation()
+  // Bouncing Spot Animation
+  const gem1 = document.querySelector('.gem1')
+  const spotClose = document.querySelector('#spot--close')
+  const spotPause = document.querySelector('#spot--pause')
+  const spotContainer = document.querySelector('.spot')
+  const spotWrapper = document.querySelector('.spot__wrapper')
+  const spotWindow = document.querySelector('.spot__window')
+  const spotIframe = document.querySelector('#spot__iframe--0')
+  const spotMaster = spotAnimation()
+  const openPanel = spotContainerOpen()
+  const spotVideoPlayer = spotVideo(spotIframe, 'BibG8h__JOE')
 
-  gsap.set(spot, {
-    motionPath: {
-      path: pathReverse,
-      align: pathReverse,
-      alignOrigin: [0.5, 0.5],
-    },
+  gsap.set(spotContainer, {
+    left: '-100%',
+  })
+  gsap.set(spotWindow, {
+    x: '-200%',
   })
 
-  button.addEventListener('click', (e) => {
-    animation.play()
+  gem1.addEventListener('click', (e) => {
+    openPanel.add(spotMaster.restart()).play()
+    spotVideo(spotIframe, 'BibG8h__JOE')
+  })
+
+  spotClose.addEventListener('click', (e) => {
+    spotMaster.pause()
+  })
+
+  spotPause.addEventListener('click', (e) => {
+    spotMaster.pause()
   })
 }
