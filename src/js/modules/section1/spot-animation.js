@@ -1,16 +1,18 @@
 import { gsap } from 'gsap'
+import { Timeline } from 'gsap/gsap-core'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin.js'
 
 gsap.registerPlugin(MotionPathPlugin)
 
 // ********************** SPOT ANIMATION **********************//
 // ************* VARIABLES
-const spotContainer = document.querySelector('.spot')
-const spotWindow = document.querySelector('.spot__window')
-const spotTrack = document.querySelector('.spot__track')
-const spot = document.querySelector('.spot__item')
-const pathForward = document.querySelector('.spot__path--forward')
-const pathReverse = document.querySelector('.spot__path--reverse')
+export const spotContainer = document.querySelector('.spot')
+export const spotWrapper = document.querySelector('.spot__wrapper')
+export const spotWindow = document.querySelector('.spot__window')
+export const spotTrack = document.querySelector('.spot__track')
+export const spot = document.querySelector('.spot__item')
+export const pathForward = document.querySelector('.spot__path--forward')
+export const pathReverse = document.querySelector('.spot__path--reverse')
 
 const duration = 4
 const moveAmount = spotTrack.offsetWidth / 3
@@ -18,6 +20,17 @@ const spotTrackMove = '-=' + moveAmount
 const spotTrackMoveBack = '+=' + moveAmount
 
 // ********* FUNCTIONS
+
+export const spotContainerMove = new Timeline({ paused: true })
+  .to(spotContainer, {
+    left: '0%',
+    duration: 2,
+  })
+  .to(spotWindow, {
+    left: '0%',
+    duration: 1,
+  })
+
 // spotContainerOpen - Function to pull out the side panel that holds the spot animation
 export function spotContainerOpen() {
   const t1 = gsap.timeline()
@@ -27,7 +40,7 @@ export function spotContainerOpen() {
     duration: 2,
   })
   t1.to(spotWindow, {
-    x: '0%',
+    left: '0%',
     duration: 1,
   })
 
@@ -92,13 +105,7 @@ export function spotMoveMiddle() {
   return t1
 }
 
-export function spotMoveEnd(remove) {
-  function removeFunction(remove) {
-    if (remove) {
-      spotContainer.classList.remove('spot--active')
-    }
-  }
-
+export function spotMoveEnd() {
   const t1 = gsap.timeline({ ease: 'power0' })
 
   t1.to(
@@ -118,8 +125,6 @@ export function spotMoveEnd(remove) {
         align: pathReverse,
         alignOrigin: [0.5, 0.5],
       },
-      onComplete: removeFunction,
-      onCompleteParams: [remove],
     },
     '<60%'
   )
@@ -138,13 +143,13 @@ export function spotAnimationMaster() {
     },
   })
 
-  spotMaster.add(spotContainerOpen())
+  // spotMaster.add(spotContainerOpen().restart())
   spotMaster.add(spotMoveIntro())
   spotMaster.add(spotMoveIntro())
   spotMaster.add(spotMoveMiddle())
   spotMaster.add(spotMoveEnd())
-  spotMaster.add(spotMoveEnd(true))
-  spotMaster.add(spotContainerOpen().reverse())
+  spotMaster.add(spotMoveEnd())
+  // spotMaster.add(spotContainerOpen().reverse())
 
   return spotMaster
 }
