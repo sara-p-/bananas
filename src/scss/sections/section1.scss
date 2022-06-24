@@ -60,13 +60,21 @@
     max-width: 800px;
     height: 100%;
     max-height: 500px;
-    border-top: 10px solid $pink;
-    border-right: 8px solid $pink;
-    border-bottom: 10px solid $pink;
-    border-left: 8px solid $pink;
+    border: 20px solid $pink;
+    // border-top: 10px solid $pink;
+    // border-right: 8px solid $pink;
+    // border-bottom: 10px solid $pink;
+    // border-left: 8px solid $pink;
     box-shadow: $box-shadow;
     border-radius: 100px;
     overflow: hidden;
+    &:after {
+      content: '';
+      @include absolute;
+      background: url('../../images/background--diagonal-stripe--green.svg');
+      background-size: 75px;
+      background-repeat: repeat;
+    }
   }
   &__vectors {
     @include absolute;
@@ -89,13 +97,17 @@
   &__item {
     width: 64px;
     height: 64px;
-    background: $black;
+    background: $white;
+    border: 10px solid $black;
+    box-shadow: $box-shadow;
     border-radius: 48px;
   }
   &__bar {
     width: 150px;
-    height: $spacing-16;
-    background: $black;
+    height: $spacing-32;
+    background: $white;
+    border: 10px solid $black;
+    box-shadow: $box-shadow;
   }
   &__svg {
     position: absolute;
@@ -123,15 +135,8 @@
     height: 100%;
     max-height: 500px;
     background: $white;
-    border-right: 5px solid $pink;
-    border-left: 5px solid $pink;
   }
   &__video {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  &__iframe {
     position: relative;
     width: 100%;
     height: 100%;

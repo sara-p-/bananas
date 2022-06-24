@@ -1,20 +1,22 @@
 import gsap from 'gsap'
-import { spotAnimation, spotContainerOpen } from './animations1'
-import { spotVideo } from './videos1'
+import { spotAnimationMaster, spotContainerOpen } from './spot-animation'
+import Data from './../../json/section1.json'
+
+import { spotVideo } from './helpers1'
 
 export default function section1() {
-  // Bouncing Spot Animation
+  // *************************** SPOT ANIMATION ******************** //
   const gem1 = document.querySelector('.gem1')
   const spotClose = document.querySelector('#spot--close')
   const spotPause = document.querySelector('#spot--pause')
   const spotContainer = document.querySelector('.spot')
-  const spotWrapper = document.querySelector('.spot__wrapper')
+  const spotVideoList = Data.section1.spotAnimation.videos
   const spotWindow = document.querySelector('.spot__window')
-  const spotIframe = document.querySelector('#spot__iframe--0')
-  const spotMaster = spotAnimation()
-  const openPanel = spotContainerOpen().pause()
-  const spotVideoPlayer = spotVideo(spotIframe, 'BibG8h__JOE')
+  const spotMasterAnimation = spotAnimationMaster()
+  const spotVideoBoxes = document.querySelectorAll('.spot__video')
+  const spotPanelOpen = spotContainerOpen().pause()
 
+  // spotAnimationScript()
   gsap.set(spotContainer, {
     left: '-100%',
   })
@@ -23,23 +25,25 @@ export default function section1() {
   })
 
   gem1.addEventListener('click', (e) => {
-    spotMaster.restart()
-    spotVideo(spotIframe, 'BibG8h__JOE')
+    spotMasterAnimation.restart()
+    spotVideoBoxes.forEach((box, index) => {
+      spotVideo(box, spotVideoList[index])
+    })
   })
 
   spotClose.addEventListener('click', (e) => {
-    spotMaster.pause()
-    openPanel.reverse()
+    spotMasterAnimation.pause()
+    spotPanelOpen.reverse()
   })
 
   spotPause.addEventListener('click', (e) => {
     console.log(spotPause.dataset.playState)
     if (spotPause.dataset.playState == 'playing') {
-      spotMaster.pause()
+      spotMasterAnimation.pause()
       spotPause.classList.replace('icon--pause', 'icon--play')
       spotPause.setAttribute('data-play-state', 'paused')
     } else {
-      spotMaster.resume()
+      spotMasterAnimation.resume()
       spotPause.classList.replace('icon--play', 'icon--pause')
       spotPause.setAttribute('data-play-state', 'playing')
     }

@@ -1,11 +1,11 @@
 import { gsap } from 'gsap'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin.js'
+
 gsap.registerPlugin(MotionPathPlugin)
 
 // ********************** SPOT ANIMATION **********************//
 // ************* VARIABLES
 const spotContainer = document.querySelector('.spot')
-const spotWrapper = document.querySelector('.spot__wrapper')
 const spotWindow = document.querySelector('.spot__window')
 const spotTrack = document.querySelector('.spot__track')
 const spot = document.querySelector('.spot__item')
@@ -54,9 +54,6 @@ export function spotMoveIntro() {
     {
       x: spotTrackMove,
       duration: 1,
-      onComplete: function () {
-        console.log('track moved')
-      },
     },
     '<75%'
   )
@@ -130,7 +127,7 @@ export function spotMoveEnd(remove) {
   return t1
 }
 
-export function spotAnimation() {
+export function spotAnimationMaster() {
   const spotMaster = gsap.timeline({ paused: true, delay: 1 })
 
   gsap.set(spot, {
