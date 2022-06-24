@@ -5,6 +5,9 @@ import {
   spotContainer,
   spotWindow,
   spotWrapper,
+  pathForward,
+  pathReverse,
+  spot,
 } from './spot-animation'
 import Data from './../../json/section1.json'
 
@@ -16,11 +19,17 @@ export default function section1() {
   const spotClose = document.querySelector('#spot--close')
   const spotPause = document.querySelector('#spot--pause')
   const spotVideoList = Data.section1.spotAnimation.videos
-  // const spotMasterTimeline
   const spotAnimation = spotAnimationMaster()
   const spotVideoBoxes = document.querySelectorAll('.spot__video')
 
   // spotAnimationScript()
+  gsap.set(spot, {
+    motionPath: {
+      path: pathReverse,
+      align: pathReverse,
+      alignOrigin: [0.5, 0.5],
+    },
+  })
   gsap.set(spotContainer, {
     left: '-100%',
   })
@@ -29,8 +38,10 @@ export default function section1() {
   })
 
   gem1.addEventListener('click', (e) => {
-    spotContainerOpen().restart()
-    spotAnimation.restart()
+    spotAnimation
+      .add(spotContainerOpen().restart(), 'spot-animation-start')
+      .restart()
+    // spotAnimation.restart()
     spotVideoBoxes.forEach((box, index) => {
       spotVideo(box, spotVideoList[index])
     })
@@ -38,9 +49,7 @@ export default function section1() {
 
   spotClose.addEventListener('click', (e) => {
     spotAnimation.pause()
-    spotContainerOpen().restart()
-    // spotContainerOpen().reverse()
-    // spotPanelOpen.reverse()
+    spotContainerOpen().reverse()
   })
 
   spotPause.addEventListener('click', (e) => {

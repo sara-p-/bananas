@@ -35,14 +35,26 @@ export const spotContainerMove = new Timeline({ paused: true })
 export function spotContainerOpen() {
   const t1 = gsap.timeline()
 
-  t1.to(spotContainer, {
-    left: '0%',
-    duration: 2,
-  })
-  t1.to(spotWindow, {
-    left: '0%',
-    duration: 1,
-  })
+  t1.fromTo(
+    spotContainer,
+    {
+      left: '-100%',
+    },
+    {
+      left: '0%',
+      duration: 2,
+    }
+  )
+  t1.fromTo(
+    spotWindow,
+    {
+      left: '-100%',
+    },
+    {
+      left: '0%',
+      duration: 1,
+    }
+  )
 
   return t1
 }
@@ -135,15 +147,8 @@ export function spotMoveEnd() {
 export function spotAnimationMaster() {
   const spotMaster = gsap.timeline({ paused: true, delay: 1 })
 
-  gsap.set(spot, {
-    motionPath: {
-      path: pathReverse,
-      align: pathReverse,
-      alignOrigin: [0.5, 0.5],
-    },
-  })
-
   // spotMaster.add(spotContainerOpen().restart())
+  spotMaster.addLabel('spot-animation-start')
   spotMaster.add(spotMoveIntro())
   spotMaster.add(spotMoveIntro())
   spotMaster.add(spotMoveMiddle())
