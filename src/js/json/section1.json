@@ -1,7 +1,24 @@
 {
   "section1": {
     "spotAnimation": {
-      "videos": ["4XeNRxrjJfw", "LydoK7hXKbs", "1Ef9CAZ3OrQ"]
+      "videos": ["4XeNRxrjJfw", "LydoK7hXKbs", "1Ef9CAZ3OrQ"],
+      "waveData": [
+        {
+          "align": 0.2,
+          "delay": ">",
+          "duration": 4
+        },
+        {
+          "align": 0.0,
+          "delay": "<0.6",
+          "duration": 3
+        },
+        {
+          "align": -0.2,
+          "delay": "<1.2",
+          "duration": 1.5
+        }
+      ]
     }
   }
 }

@@ -239,22 +239,10 @@
     }
   }
   &__wave {
-    width: 200%;
+    width: 110%;
     position: absolute;
-    bottom: 0;
-    &--0 {
-      @extend .beach__wave;
-      height: 100px;
-    }
-    &--1 {
-      @extend .beach__wave;
-      height: 75px;
-      left: -25px;
-    }
-    &--2 {
-      @extend .beach__wave;
-      height: 50px;
-    }
+    bottom: 20px;
+    height: 75px;
     &-wrapper {
       background: $blue;
       position: relative;
@@ -265,11 +253,58 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        top: -20px;
-        background-image: url('../../images/beach--wave.svg');
-        background-size: 50px;
+        // top: -100%;
+        background-image: url('../../images/path--wave--2.svg');
         background-repeat: repeat-x;
       }
     }
+    &--0 {
+      @extend .beach__wave;
+      .beach__wave-wrapper:after {
+        background-size: 70px;
+        top: -35px;
+      }
+    }
+    &--1 {
+      @extend .beach__wave;
+      // height: 45px;
+      // left: -25px;
+      .beach__wave-wrapper:after {
+        background-size: 50px;
+        top: -25px;
+      }
+    }
+    &--2 {
+      @extend .beach__wave;
+      // height: 30px;
+      .beach__wave-wrapper:after {
+        background-size: 30px;
+        top: -5px;
+      }
+    }
+  }
+  &__svg-box {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 0;
+    bottom: 40px;
+    z-index: 5;
+  }
+  &__svg-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include flex;
+  }
+  &__svg {
+    width: 100%;
+    height: 100%;
+    max-width: 50px;
+  }
+  &__wave-path {
+    fill: none;
+    stroke: none;
+    stroke-width: 0;
   }
 }

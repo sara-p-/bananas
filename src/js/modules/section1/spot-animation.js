@@ -12,6 +12,11 @@ export const spotWindow = document.querySelector('.spot__window')
 export const spotInnerWindow = document.querySelector('.spot__inner-window')
 export const spotWindowArray = [spotWindow, spotInnerWindow]
 export const spotControls = document.querySelector('.spot__controls')
+export const beachWaves = document.querySelectorAll('.beach__wave')
+export const beachWave0 = document.querySelector('.beach__wave--0')
+export const beachWave1 = document.querySelector('.beach__wave--1')
+export const beachWave2 = document.querySelector('.beach__wave--2')
+export const beachWavePath = document.querySelector('.beach__wave-path')
 
 export const spotTrack = document.querySelector('.spot__track')
 export const spotBottomTrack = document.querySelector('.spot__bottom')
@@ -26,6 +31,22 @@ const spotTrackMove = '-=' + moveAmount
 const spotTrackMoveBack = '+=' + moveAmount
 
 // ********* FUNCTIONS
+// waveMove - function to move the waves in the beach scene (box 1)
+export function waveMove(wave, alignY = 0.4, duration = 2) {
+  const t1 = gsap.timeline({ repeat: -1, yoyo: true })
+
+  t1.to(wave, {
+    motionPath: {
+      path: beachWavePath,
+      align: beachWavePath,
+      alignOrigin: [0.5, alignY],
+    },
+    duration: duration,
+    ease: 'power0',
+  })
+
+  return t1
+}
 
 //  spotPanelMove - Function to open/close the spot panel sections
 export function spotPanelMove() {
@@ -71,43 +92,7 @@ export function spotPanelMove() {
 
   return t1
 }
-// spotContainerOpen - Function to pull out the side panel that holds the spot animation
-export function spotContainerOpen() {
-  const t1 = gsap.timeline()
 
-  t1.fromTo(
-    spotContainer,
-    {
-      left: '-100%',
-    },
-    {
-      left: '0%',
-      duration: 2,
-    }
-  )
-  t1.fromTo(
-    spotWindow,
-    {
-      left: '-100%',
-    },
-    {
-      left: '0%',
-      duration: 1,
-    }
-  )
-  t1.fromTo(
-    spotControls,
-    {
-      left: '-100%',
-    },
-    {
-      left: '0%',
-      duration: 1,
-    }
-  )
-
-  return t1
-}
 // spotMoveIntro - Function that stores the beginning of the animation
 export function spotMoveIntro() {
   const t1 = gsap.timeline({ ease: 'power0' })
