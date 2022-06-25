@@ -11,20 +11,6 @@ button,
   $self: &;
   @include clear-btn;
   @include btn-base;
-  &--primary {
-    @extend .button;
-  }
-  &--close {
-    @extend .button;
-    border: none;
-    padding: 5px;
-    background: transparent;
-    &:hover,
-    &:focus {
-      background: transparent;
-      color: $blue;
-    }
-  }
   &--image {
     @extend .button;
     #{$self}__figure {
@@ -37,7 +23,34 @@ button,
       height: auto;
     }
   }
+  // Button Shapes
+  &--circle {
+    @extend .button;
+    border-radius: 50%;
+  }
+  // Button Colors
+  &--pink {
+    @extend .button;
+    background: $pink;
+    color: $white;
+    &:hover,
+    &:focus {
+      background: $blue;
+      color: $white;
+    }
+  }
   &--blue {
+    @extend .button;
+    border: none;
+    background: $pink;
+    color: $white;
+    &:hover,
+    &:focus {
+      background: $blue;
+      color: $white;
+    }
+  }
+  &--hover--blue-stripes {
     @extend .button;
     border: none;
     overflow: hidden;

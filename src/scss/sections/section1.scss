@@ -18,32 +18,7 @@
   display: block;
   @include absolute;
   box-sizing: border-box;
-  &__close,
-  &__pause {
-    position: absolute;
-    right: 24px;
-    top: 24px;
-    z-index: 2;
-    background: $pink;
-    border: none;
-    padding: 25px 7px;
-    border-radius: 50px;
-    color: $white;
-    font-size: 50px;
-    width: 100px;
-    box-shadow: $box-shadow;
-    transition: background-color 0s, box-shadow 0s, transform 300ms;
-    &:hover,
-    &:focus {
-      transform: scale(1.2, 1.2);
-      background: $blue;
-      color: $white;
-      box-shadow: $box-shadow-inverted;
-    }
-  }
-  &__pause {
-    top: calc(100% - 124px);
-  }
+
   &__wrapper {
     position: relative;
     width: 100%;
@@ -52,7 +27,39 @@
     background-image: url('../../images/background--checkers--black.svg');
     background-size: 150px;
     background-repeat: repeat;
-    @include flex;
+    @include flex($dir: column);
+  }
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    padding: $spacing-8;
+    @include plastic-gradient-background(
+      $deg: 0deg,
+      $color: $blue,
+      $percent: 5%
+    );
+    box-shadow: $box-shadow;
+  }
+  &__close,
+  &__pause {
+    padding: 0 $spacing-16;
+    border: none;
+    border-radius: 4px;
+    font-size: 40px;
+    height: 100%;
+    box-shadow: $box-shadow;
+    margin-right: 5px;
+    transition: background-color 0s, box-shadow 0s, transform 300ms;
+    @include plastic-gradient-background;
+    &:hover,
+    &:focus {
+      @include plastic-gradient-background($inverted: true);
+      // box-shadow: $box-shadow-inverted;
+      // color: darken($white, 50%);
+    }
   }
   &__window {
     position: relative;
@@ -61,10 +68,6 @@
     height: 100%;
     max-height: 500px;
     border: 50px solid $pink;
-    // border-top: 10px solid $pink;
-    // border-right: 8px solid $pink;
-    // border-bottom: 10px solid $pink;
-    // border-left: 8px solid $pink;
     box-shadow: $box-shadow;
     border-radius: 100px;
     overflow: hidden;
@@ -76,6 +79,7 @@
       background-repeat: repeat;
     }
   }
+
   &__vectors {
     @include absolute;
   }

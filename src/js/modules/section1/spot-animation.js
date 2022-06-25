@@ -9,6 +9,8 @@ gsap.registerPlugin(MotionPathPlugin)
 export const spotContainer = document.querySelector('.spot')
 export const spotWrapper = document.querySelector('.spot__wrapper')
 export const spotWindow = document.querySelector('.spot__window')
+export const spotControls = document.querySelector('.spot__controls')
+
 export const spotTrack = document.querySelector('.spot__track')
 export const spot = document.querySelector('.spot__item')
 export const pathForward = document.querySelector('.spot__path--forward')
@@ -20,16 +22,6 @@ const spotTrackMove = '-=' + moveAmount
 const spotTrackMoveBack = '+=' + moveAmount
 
 // ********* FUNCTIONS
-
-export const spotContainerMove = new Timeline({ paused: true })
-  .to(spotContainer, {
-    left: '0%',
-    duration: 2,
-  })
-  .to(spotWindow, {
-    left: '0%',
-    duration: 1,
-  })
 
 // spotContainerOpen - Function to pull out the side panel that holds the spot animation
 export function spotContainerOpen() {
@@ -47,6 +39,16 @@ export function spotContainerOpen() {
   )
   t1.fromTo(
     spotWindow,
+    {
+      left: '-100%',
+    },
+    {
+      left: '0%',
+      duration: 1,
+    }
+  )
+  t1.fromTo(
+    spotControls,
     {
       left: '-100%',
     },

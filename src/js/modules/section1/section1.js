@@ -30,18 +30,17 @@ export default function section1() {
       alignOrigin: [0.5, 0.5],
     },
   })
-  gsap.set(spotContainer, {
-    left: '-100%',
-  })
-  gsap.set(spotWindow, {
-    left: '-100%',
-  })
+  // gsap.set(spotContainer, {
+  //   left: '-100%',
+  // })
+  // gsap.set(spotWindow, {
+  //   left: '-100%',
+  // })
 
   gem1.addEventListener('click', (e) => {
     spotAnimation
       .add(spotContainerOpen().restart(), 'spot-animation-start')
       .restart()
-    // spotAnimation.restart()
     spotVideoBoxes.forEach((box, index) => {
       spotVideo(box, spotVideoList[index])
     })

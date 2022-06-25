@@ -185,3 +185,50 @@
     }
   }
 }
+
+@mixin icon {
+  display: inline-block;
+  font-style: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+}
+
+@mixin plastic-gradient-background(
+  $color: $pink,
+  $percent: 10%,
+  $light: $color,
+  $dark: darken($color, $percent),
+  $left: 5%,
+  $right: 95%,
+  $deg: 90deg,
+  $inverted: false
+) {
+  text-shadow: -2px 2px 0px rgba(54, 54, 54, 0.5);
+
+  @if $inverted {
+    background: $dark;
+    background: linear-gradient(
+      $deg,
+      $light 0%,
+      $dark 5%,
+      $dark 50%,
+      $dark 95%,
+      $light 100%
+    );
+    border-top: 3px solid $color;
+    border-bottom: 3px solid $color;
+  } @else {
+    background: $light;
+    background: linear-gradient(
+      $deg,
+      $dark 0%,
+      $light 5%,
+      $light 50%,
+      $light 95%,
+      $dark 100%
+    );
+    border-top: 3px solid darken($color, $percent);
+    border-bottom: 3px solid darken($color, $percent);
+  }
+}
