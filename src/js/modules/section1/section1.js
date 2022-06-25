@@ -35,7 +35,7 @@ export default function section1() {
     left: '-100%',
   })
   gsap.set(spotWindow, {
-    left: '-100%',
+    x: '200%',
   })
   gsap.set(spotControls, {
     bottom: '-100%',

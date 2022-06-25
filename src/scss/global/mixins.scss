@@ -202,10 +202,10 @@
   $left: 5%,
   $right: 95%,
   $deg: 90deg,
+  $text-color: $white,
+  $text-shadow-color: $black,
   $inverted: false
 ) {
-  text-shadow: -2px 2px 0px rgba(54, 54, 54, 0.5);
-
   @if $inverted {
     background: $dark;
     background: linear-gradient(
@@ -218,6 +218,8 @@
     );
     border-top: 3px solid $color;
     border-bottom: 3px solid $color;
+    text-shadow: -2px 2px 0px $text-color;
+    color: darken($text-color, 50%);
   } @else {
     background: $light;
     background: linear-gradient(
@@ -230,5 +232,14 @@
     );
     border-top: 3px solid darken($color, $percent);
     border-bottom: 3px solid darken($color, $percent);
+    text-shadow: -2px 2px 0px $text-shadow-color;
+    color: $text-color;
   }
+}
+
+@mixin background--checkers($background-color: $white, $size: 150px) {
+  background-color: $background-color;
+  background-image: url('../../images/background--checkers--black.svg');
+  background-size: $size;
+  background-repeat: repeat;
 }
