@@ -14,6 +14,8 @@ export const spotWindowArray = [spotWindow, spotInnerWindow]
 export const spotControls = document.querySelector('.spot__controls')
 
 export const spotTrack = document.querySelector('.spot__track')
+export const spotBottomTrack = document.querySelector('.spot__bottom')
+export const spotTrackArray = [spotTrack, spotBottomTrack]
 export const spot = document.querySelector('.spot__item')
 export const pathForward = document.querySelector('.spot__path--forward')
 export const pathReverse = document.querySelector('.spot__path--reverse')
@@ -37,37 +39,23 @@ export function spotPanelMove() {
     {
       left: '0%',
       duration: 2,
-      ease: 'sine',
+      ease: 'expo.inOut',
     }
   )
   t1.fromTo(
-    spotWindow,
+    spotWindowArray,
     {
       x: '200%',
     },
     {
       x: '0%',
       duration: 2,
-      ease: 'back',
-      delay: 0.3,
-      // stagger: 0.1,
-    }
-  )
-
-  t1.to(
-    spotInnerWindow,
-    {
-      x: '-20px',
-      duration: 0.3,
+      ease: 'expo.inOut',
+      // delay: 0.3,
+      stagger: 0.1,
     },
-    '<70%'
+    '<'
   )
-  t1.to(spotInnerWindow, {
-    x: 0,
-    duration: 0.5,
-    ease: 'back',
-  })
-
   t1.fromTo(
     spotControls,
     {
@@ -75,8 +63,10 @@ export function spotPanelMove() {
     },
     {
       bottom: '0%',
+      ease: 'back',
       duration: 1,
-    }
+    },
+    '<50%'
   )
 
   return t1
@@ -135,10 +125,12 @@ export function spotMoveIntro() {
     '<60%'
   )
   t1.to(
-    spotTrack,
+    spotTrackArray,
     {
       x: spotTrackMove,
       duration: 1,
+      stagger: 0.1,
+      ease: 'expo',
     },
     '<75%'
   )
@@ -181,10 +173,12 @@ export function spotMoveEnd() {
   const t1 = gsap.timeline({ ease: 'power0' })
 
   t1.to(
-    spotTrack,
+    spotTrackArray,
     {
       x: spotTrackMoveBack,
       duration: 1,
+      stagger: 0.1,
+      ease: 'expo',
     },
     '<75%'
   )
@@ -205,15 +199,13 @@ export function spotMoveEnd() {
 }
 
 export function spotAnimationMaster() {
-  const spotMaster = gsap.timeline({ paused: true, delay: 1 })
+  const spotMaster = gsap.timeline({ paused: true, delay: 1, repeat: -1 })
 
-  // spotMaster.add(spotContainerOpen().restart())
   spotMaster.add(spotMoveIntro())
   spotMaster.add(spotMoveIntro())
   spotMaster.add(spotMoveMiddle())
   spotMaster.add(spotMoveEnd())
   spotMaster.add(spotMoveEnd())
-  // spotMaster.add(spotContainerOpen().reverse())
 
   return spotMaster
 }

@@ -31,21 +31,21 @@ export default function section1() {
       alignOrigin: [0.5, 0.5],
     },
   })
-  gsap.set(spotContainer, {
-    left: '-100%',
-  })
-  gsap.set(spotWindow, {
-    x: '200%',
-  })
-  gsap.set(spotControls, {
-    bottom: '-100%',
-  })
+  // gsap.set(spotContainer, {
+  //   left: '-100%',
+  // })
+  // gsap.set(spotWindow, {
+  //   x: '200%',
+  // })
+  // gsap.set(spotControls, {
+  //   bottom: '-100%',
+  // })
 
   gem1.addEventListener('click', (e) => {
     spotPanelMove().restart()
-    spotVideoBoxes.forEach((box, index) => {
-      spotVideo(box, spotVideoList[index])
-    })
+    // spotVideoBoxes.forEach((box, index) => {
+    //   spotVideo(box, spotVideoList[index])
+    // })
   })
 
   spotClose.addEventListener('click', (e) => {
