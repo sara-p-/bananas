@@ -56,7 +56,7 @@ export default function section1() {
     )
   })
 
-  // waveTimeline.restart()
+  waveTimeline.restart()
 
   gem1.addEventListener('click', (e) => {
     spotPanelMove().restart()

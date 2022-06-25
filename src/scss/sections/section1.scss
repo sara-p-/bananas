@@ -70,7 +70,8 @@
     height: 100%;
     position: relative;
     background: $pink;
-    border-radius: 100px;
+    border-radius: 6;
+    box-shadow: $box-shadow;
     @include flex;
     &:before {
       content: '';
@@ -90,21 +91,21 @@
   }
   &__inner-window {
     position: relative;
-    width: calc(100% - (60px * 2));
-    height: calc(100% - (60px * 2));
-    border-radius: 40px;
-    // border: 30px solid $pink;
-    box-shadow: $box-shadow;
+    width: calc(100% - (45px * 2));
+    height: calc(100% - (45px * 2));
+    border-radius: 6px;
+    box-shadow: $box-shadow-inset;
     overflow: hidden;
     background: $white;
 
-    // &:after {
-    //   content: '';
-    //   @include absolute;
-    //   background: url('../../images/background--diagonal-stripe--green.svg');
-    //   background-size: 75px;
-    //   background-repeat: repeat;
-    // }
+    &:after {
+      content: '';
+      @include absolute;
+      @include overlay--tv-screen;
+      // background: url('../../images/background--diagonal-stripe--green.svg');
+      // background-size: 75px;
+      // background-repeat: repeat;
+    }
   }
 
   &__vectors {
@@ -222,8 +223,8 @@
   }
   &__palm {
     position: absolute;
-    width: 250px;
-    height: 70%;
+    width: 312px;
+    height: 90%;
     bottom: 0;
     background-size: contain;
     background-repeat: no-repeat;
@@ -278,8 +279,8 @@
       @extend .beach__wave;
       // height: 30px;
       .beach__wave-wrapper:after {
-        background-size: 30px;
-        top: -5px;
+        background-size: 40px;
+        top: -20px;
       }
     }
   }
