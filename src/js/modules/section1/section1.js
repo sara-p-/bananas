@@ -2,7 +2,6 @@ import gsap from 'gsap'
 import {
   spotAnimationMaster,
   spotPanelMove,
-  waveMove,
   spotContainer,
   spotWindow,
   spotControls,
@@ -10,11 +9,8 @@ import {
   pathForward,
   pathReverse,
   spot,
-  beachWaves,
-  beachWave0,
-  beachWave1,
-  beachWave2,
 } from './spot-animation'
+import { waveMove, beachWaves, sunMove, beachSun, skyMove } from './beach-scene'
 import Data from './../../json/section1.json'
 
 import { spotVideo } from './helpers1'
@@ -47,8 +43,8 @@ export default function section1() {
   //   bottom: '-100%',
   // })
 
+  // Waves
   const waveTimeline = gsap.timeline({ repeat: -1, yoyo: true, paused: true })
-
   beachWaves.forEach((wave, index) => {
     waveTimeline.add(
       waveMove(wave, waveData[index].align, waveData[index].duration),
@@ -57,6 +53,8 @@ export default function section1() {
   })
 
   waveTimeline.restart()
+  sunMove().restart()
+  skyMove().restart()
 
   gem1.addEventListener('click', (e) => {
     spotPanelMove().restart()
