@@ -3,35 +3,18 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin.js'
 
 gsap.registerPlugin(MotionPathPlugin)
 
+import Data from './../../json/section1.json'
+import { randomNumberBetween } from './helpers1'
+
 // ********************** Beach Scene **********************//
 // ************* VARIABLES
 export const beachWaves = document.querySelectorAll('.beach__wave')
-export const beachWave0 = document.querySelector('.beach__wave--0')
-export const beachWave1 = document.querySelector('.beach__wave--1')
-export const beachWave2 = document.querySelector('.beach__wave--2')
 export const beachWavePath = document.querySelector('.beach__wave-path')
 export const beachSun = document.querySelector('.beach__sun-svg')
-export const beachSky = document.querySelector('.beach__sky')
+export const waveData = Data.section1.spotAnimation.waveData
 
 // ************* FUNCTIONS
-// skyMove - move the sky from "night" to "day"
-export function skyMove() {
-  const t1 = gsap.timeline({ paused: true, repeat: -1, yoyo: true })
 
-  t1.fromTo(
-    beachSky,
-    {
-      bottom: '0%',
-    },
-    {
-      bottom: '-500%',
-      duration: 24,
-      ease: 'power3.out',
-    }
-  )
-
-  return t1
-}
 // sunMove - function to move the sun
 export function sunMove() {
   const t1 = gsap.timeline({ paused: true, repeat: -1, yoyo: true })
@@ -66,3 +49,46 @@ export function waveMove(wave, alignY = 0.4, duration = 2) {
 
   return t1
 }
+
+// WavesTimeline
+export const waveTimeline = gsap.timeline({
+  repeat: -1,
+  yoyo: true,
+  paused: true,
+})
+beachWaves.forEach((wave, index) => {
+  waveTimeline.add(
+    waveMove(wave, waveData[index].align, waveData[index].duration),
+    waveData[index].delay
+  )
+})
+
+// cloudMove - function to move the clouds
+export const beachClouds = document.querySelectorAll('.beach__cloud')
+export const cloudTimeline = gsap.timeline({
+  paused: true,
+})
+
+export function cloudMove(cloud, dur) {
+  const t1 = gsap.timeline()
+
+  t1.fromTo(
+    cloud,
+    {
+      left: -300,
+    },
+    {
+      left: '110%',
+      duration: dur,
+      ease: 'power0',
+      yoyo: true,
+      repeat: -1,
+    }
+  )
+
+  return t1
+}
+
+beachClouds.forEach((cloud, index) => {
+  cloudTimeline.add(cloudMove(cloud, randomNumberBetween(25, 35)), '<3')
+})

@@ -102,7 +102,7 @@
     &:after {
       content: '';
       @include absolute;
-      @include overlay--tv-screen;
+      // @include overlay--tv-screen;
       // background: url('../../images/background--diagonal-stripe--green.svg');
       // background-size: 75px;
       // background-repeat: repeat;
@@ -194,14 +194,53 @@
 
 // Box 0 - Beach
 .beach {
-  // background: $purple;
-  &__sky {
+  background: $purple;
+  // &__sky {
+  //   position: absolute;
+  //   height: 600%;
+  //   width: 100%;
+  //   bottom: -100%;
+  //   left: 0;
+  //   @include background--gradient--light-dark($color: $purple);
+  // }
+  &__cloud {
     position: absolute;
-    height: 600%;
-    width: 100%;
-    bottom: -100%;
-    left: 0;
-    @include background--gradient--light-dark($color: $purple);
+    height: auto;
+    &--0 {
+      @extend .beach__cloud;
+      // width: 200px;
+      width: 19%;
+      top: 11%;
+      right: 23%;
+    }
+    &--1 {
+      @extend .beach__cloud;
+      // width: 123px;
+      width: 16%;
+      top: 17%;
+      left: 5%;
+    }
+    &--2 {
+      @extend .beach__cloud;
+      // width: 250px;
+      width: 33%;
+      top: 11%;
+      right: 5%;
+    }
+    &--3 {
+      @extend .beach__cloud;
+      width: 20%;
+      // width: 170px;
+      top: 3%;
+      left: 30%;
+    }
+    &--4 {
+      @extend .beach__cloud;
+      // width: 200px;
+      width: 24%;
+      top: 30%;
+      left: 30%;
+    }
   }
   &__sun {
     position: absolute;

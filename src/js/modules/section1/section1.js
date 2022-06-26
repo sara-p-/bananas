@@ -1,4 +1,6 @@
 import gsap from 'gsap'
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin.js'
+
 import {
   spotAnimationMaster,
   spotPanelMove,
@@ -10,10 +12,20 @@ import {
   pathReverse,
   spot,
 } from './spot-animation'
-import { waveMove, beachWaves, sunMove, beachSun, skyMove } from './beach-scene'
+import {
+  beachWavePath,
+  waveTimeline,
+  waveMove,
+  waveData,
+  beachWaves,
+  sunMove,
+  beachSun,
+  beachClouds,
+  cloudTimeline,
+} from './beach-scene'
 import Data from './../../json/section1.json'
-
-import { spotVideo } from './helpers1'
+import { spotVideo, randomNumberBetween } from './helpers1'
+gsap.registerPlugin(MotionPathPlugin)
 
 export default function section1() {
   // *************************** SPOT ANIMATION ******************** //
@@ -23,7 +35,6 @@ export default function section1() {
   const spotVideoList = Data.section1.spotAnimation.videos
   const spotAnimation = spotAnimationMaster()
   const spotVideoBoxes = document.querySelectorAll('.spot__video')
-  const waveData = Data.section1.spotAnimation.waveData
 
   // spotAnimationScript()
   gsap.set(spot, {
@@ -42,19 +53,21 @@ export default function section1() {
   // gsap.set(spotControls, {
   //   bottom: '-100%',
   // })
-
-  // Waves
-  const waveTimeline = gsap.timeline({ repeat: -1, yoyo: true, paused: true })
   beachWaves.forEach((wave, index) => {
-    waveTimeline.add(
-      waveMove(wave, waveData[index].align, waveData[index].duration),
-      waveData[index].delay
-    )
+    gsap.set(wave, {
+      motionPath: {
+        path: beachWavePath,
+        align: beachWavePath,
+        alignOrigin: [0.5, waveData[index].align],
+      },
+    })
   })
 
+  console.log(randomNumberBetween(10, 20))
+
+  cloudTimeline.restart()
   waveTimeline.restart()
   sunMove().restart()
-  skyMove().restart()
 
   gem1.addEventListener('click', (e) => {
     spotPanelMove().restart()

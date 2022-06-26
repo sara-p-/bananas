@@ -13,3 +13,10 @@ export function spotVideo(target, id) {
 
   player.loadVideoById(id)
 }
+
+// randomNumberBetween - function to provide a random number between the min and max given
+export function randomNumberBetween(min, max) {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min) + min) //The maximum is exclusive and the minimum is inclusive
+}
