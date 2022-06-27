@@ -2,7 +2,7 @@ import '../scss/style.scss'
 
 // Import the General Scripts
 import modals from './modules/modals'
-import section1 from './modules/section1/section1'
+import section1 from './modules/section1/spot--script'
 
 // *********************** Run Scripts ***************** //
 // fullScript()

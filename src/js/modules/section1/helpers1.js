@@ -14,9 +14,20 @@ export function spotVideo(target, id) {
   player.loadVideoById(id)
 }
 
-// randomNumberBetween - function to provide a random number between the min and max given
-export function randomNumberBetween(min, max) {
+// getRandomNumberBetween - function to provide a random number between the min and max given
+export function getRandomNumberBetween(min, max) {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min) + min) //The maximum is exclusive and the minimum is inclusive
+}
+
+// getElementWidth - get the width of the given element in pixels
+export function getElementWidth(element) {
+  const width = element.offsetWidth
+  return width
+}
+
+// getElementsOffscreenAmount - calculate what percentage past any direction is needed to get an element just off the screen
+export function getElementsOffscreenAmount(element) {
+  return -Math.abs(element.offsetWidth)
 }

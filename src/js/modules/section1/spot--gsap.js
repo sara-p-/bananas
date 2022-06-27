@@ -1,5 +1,4 @@
 import { gsap } from 'gsap'
-import { Timeline } from 'gsap/gsap-core'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin.js'
 
 gsap.registerPlugin(MotionPathPlugin)
@@ -21,8 +20,8 @@ export const pathForward = document.querySelector('.spot__path--forward')
 export const pathReverse = document.querySelector('.spot__path--reverse')
 
 const duration = 4
-const moveAmount = spotTrack.offsetWidth / 3
-const spotTrackMove = '-=' + moveAmount
+export const moveAmount = spotTrack.offsetWidth / 3
+export const spotTrackMove = '-=' + moveAmount
 const spotTrackMoveBack = '+=' + moveAmount
 
 // ********* FUNCTIONS

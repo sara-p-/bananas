@@ -3,8 +3,8 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin.js'
 
 gsap.registerPlugin(MotionPathPlugin)
 
-import Data from './../../json/section1.json'
-import { randomNumberBetween } from './helpers1'
+import Data from '../../json/section1.json'
+import { getElementsOffscreenAmount, getRandomNumberBetween } from './helpers1'
 
 // ********************** Beach Scene **********************//
 // ************* VARIABLES
@@ -69,13 +69,13 @@ export const cloudTimeline = gsap.timeline({
   paused: true,
 })
 
-export function cloudMove(cloud, dur) {
+export function cloudMove(cloud, dur, left) {
   const t1 = gsap.timeline()
 
   t1.fromTo(
     cloud,
     {
-      left: -300,
+      left: getElementsOffscreenAmount(cloud),
     },
     {
       left: '110%',
@@ -90,5 +90,5 @@ export function cloudMove(cloud, dur) {
 }
 
 beachClouds.forEach((cloud, index) => {
-  cloudTimeline.add(cloudMove(cloud, randomNumberBetween(25, 35)), '<3')
+  cloudTimeline.add(cloudMove(cloud, getRandomNumberBetween(25, 35)), '<3')
 })
