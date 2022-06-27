@@ -24,6 +24,12 @@ import {
   cloudTimeline,
 } from './spot--beach'
 import Data from '../../json/section1.json'
+import {
+  mountainSun,
+  mountainTimeline,
+  treeTimeline,
+  treeMove,
+} from './spot--mountains'
 import { spotVideo, getRandomNumberBetween } from './helpers1'
 import { spotTrack, moveAmount, spotTrackMove } from './spot--gsap'
 gsap.registerPlugin(MotionPathPlugin)
@@ -63,15 +69,21 @@ export default function section1() {
       },
     })
   })
+
   gsap.set(spotTrack, {
-    x: '-=' + moveAmount,
+    x: '-=' + moveAmount * 2,
   })
 
   // ******************* PANEL-OPEN "CLICK" EVENT ****************** //
   spot__button_panelOpen.addEventListener('click', (e) => {
+    // Beach Animations
     cloudTimeline.restart()
     waveTimeline.restart()
-    sunMove().restart()
+    sunMove(beachSun).restart()
+    // Mountain Animations
+    sunMove(mountainSun, 15).restart()
+    mountainTimeline.restart()
+    treeMove().restart()
     spotPanelMove().restart()
   })
 

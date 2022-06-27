@@ -22,7 +22,7 @@
               <figure class="button__figure">
                 <img
                   class="button__image image--contain"
-                  src="<%=require('../../images/gem--amethyst.svg')%>"
+                  src="<%=require('../../images/section1/gems/gem--amethyst.svg')%>"
                   alt="Amethyst"
                 />
               </figure>
@@ -72,7 +72,7 @@
                       <!-- Cloud 0 -->
                       <div class="beach__cloud beach__cloud--0">
                         <img
-                          src="<%=require('../../images/beach--cloud--0.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--0.svg')%>"
                           alt="Cloud #1"
                           class="cloud-image image--contain"
                         />
@@ -80,7 +80,7 @@
                       <!-- Cloud 2 -->
                       <div class="beach__cloud beach__cloud--2">
                         <img
-                          src="<%=require('../../images/beach--cloud--2.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--2.svg')%>"
                           alt="Cloud #3"
                           class="cloud-image image--contain"
                         />
@@ -88,7 +88,7 @@
                       <!-- Cloud 3 -->
                       <div class="beach__cloud beach__cloud--3">
                         <img
-                          src="<%=require('../../images/beach--cloud--3.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--3.svg')%>"
                           alt="Cloud #4"
                           class="cloud-image image--contain"
                         />
@@ -96,7 +96,7 @@
                       <!-- Cloud 1 -->
                       <div class="beach__cloud beach__cloud--1">
                         <img
-                          src="<%=require('../../images/beach--cloud--1.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--1.svg')%>"
                           alt="Cloud #2"
                           class="cloud-image image--contain"
                         />
@@ -104,7 +104,7 @@
                       <!-- Cloud 4 -->
                       <div class="beach__cloud beach__cloud--4">
                         <img
-                          src="<%=require('../../images/beach--cloud--4.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--4.svg')%>"
                           alt="Cloud #5"
                           class="cloud-image image--contain"
                         />
@@ -145,7 +145,14 @@
                       </div>
                     </div>
                     <!-- Mountain Scene -->
-                    <div id="mountain--scene" class="spot__box spot__box--1">
+                    <div
+                      id="mountain--scene"
+                      class="spot__box spot__box--1 mountain"
+                    >
+                      <!-- Sun -->
+                      <div class="mountain__sun">
+                        <div class="beach__sun-svg"></div>
+                      </div>
                       <!-- Mountains -->
                       <div class="mountain__box">
                         <div
@@ -155,48 +162,69 @@
                         <div
                           class="mountain__image mountain__image--front"
                         ></div>
-                        <div
-                          class="mountain__image mountain__image--spacer"
-                        ></div>
                       </div>
                       <!-- Trees -->
                       <div class="mountain__tree mountain__tree--0">
                         <img
-                          src="<%=require('../../images/mountain--tree.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
                           alt=""
                           class="image--contain"
                         />
                       </div>
                       <div class="mountain__tree mountain__tree--1">
                         <img
-                          src="<%=require('../../images/mountain--tree.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
                           alt=""
                           class="image--contain"
                         />
                       </div>
                       <div class="mountain__tree mountain__tree--2">
                         <img
-                          src="<%=require('../../images/mountain--tree.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
                           alt=""
                           class="image--contain"
                         />
                       </div>
                       <div class="mountain__tree mountain__tree--3">
                         <img
-                          src="<%=require('../../images/mountain--tree.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
                           alt=""
                           class="image--contain"
                         />
                       </div>
                       <div class="mountain__tree mountain__tree--4">
                         <img
-                          src="<%=require('../../images/mountain--tree.svg')%>"
+                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
                           alt=""
                           class="image--contain"
                         />
                       </div>
                     </div>
-                    <div class="spot__box spot__box--2"></div>
+                    <!-- Desert Scene -->
+                    <div class="spot__box spot__box--2 desert">
+                      <!-- Sun -->
+                      <div class="desert__sun">
+                        <div class="beach__sun-svg"></div>
+                      </div>
+                      <!-- Mountain -->
+                      <div class="desert__mountain">
+                        <img
+                          class="button__image image--contain"
+                          src="<%=require('../../images/section1/spot-animation/desert/desert--mountain.svg')%>"
+                          alt="Desert Mountain"
+                        />
+                      </div>
+                      <!-- Sand -->
+                      <div class="desert__sand"></div>
+                      <!-- Cactus -->
+                      <div class="desert__cactus">
+                        <img
+                          class="button__image image--contain"
+                          src="<%=require('../../images/section1/spot-animation/desert/desert--cactus.svg')%>"
+                          alt="Desert Mountain"
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div class="spot__bottom"></div>
                 </div>

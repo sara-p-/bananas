@@ -167,7 +167,7 @@
 }
 
 @mixin button-background-slide(
-  $url: '../../images/background--blue-stripe.svg',
+  $url: '../../images/backgrounds/background--blue-stripe.svg',
   $speed: 3s
 ) {
   &:before {
@@ -239,7 +239,7 @@
 
 @mixin background--checkers($background-color: $white, $size: 150px) {
   background-color: $background-color;
-  background-image: url('../../images/background--checkers--black.svg');
+  background-image: url('../../images/backgrounds/background--checkers--black.svg');
   background-size: $size;
   background-repeat: repeat;
 }

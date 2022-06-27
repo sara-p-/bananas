@@ -52,7 +52,7 @@
       position: relative;
       width: 40%;
       height: auto;
-      background-image: url('../../images/beach--sun.svg');
+      background-image: url('../../images/section1/spot-animation/beach/beach--sun.svg');
       background-size: 100%;
       background-repeat: no-repeat;
       &:before {
@@ -82,12 +82,12 @@
     &--left {
       @extend .beach__palm;
       left: 10%;
-      background-image: url('../../images/beach--palm--left.svg');
+      background-image: url('../../images/section1/spot-animation/beach/beach--palm--left.svg');
     }
     &--right {
       @extend .beach__palm;
       right: 10%;
-      background-image: url('../../images/beach--palm--right.svg');
+      background-image: url('../../images/section1/spot-animation/beach/beach--palm--right.svg');
     }
   }
   &__wave {
@@ -106,7 +106,7 @@
         width: 100%;
         height: 100%;
         // top: -100%;
-        background-image: url('../../images/path--wave--2.svg');
+        background-image: url('../../images/section1/spot-animation/beach/path--wave--2.svg');
         background-repeat: repeat-x;
       }
     }

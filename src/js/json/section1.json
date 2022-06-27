@@ -19,9 +19,40 @@
           "duration": 4
         }
       ],
-      "cloudData": [
+      "mountainMountainData": [
         {
-          "to": "-20%"
+          "duration": 15,
+          "xAmount": 100
+        },
+        {
+          "duration": 10,
+          "xAmount": -100
+        },
+        {
+          "duration": 10,
+          "xAmount": 100
+        }
+      ],
+      "mountainTreeData": [
+        {
+          "duration": 1,
+          "yAmount": -20
+        },
+        {
+          "duration": 2,
+          "yAmount": -10
+        },
+        {
+          "duration": 3,
+          "yAmount": -15
+        },
+        {
+          "duration": 4,
+          "yAmount": -40
+        },
+        {
+          "duration": 2,
+          "yAmount": -10
         }
       ]
     }
