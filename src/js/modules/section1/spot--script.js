@@ -30,8 +30,13 @@ import {
   treeTimeline,
   treeMove,
 } from './spot--mountains'
-import { spotVideo, getRandomNumberBetween } from './helpers1'
+import {
+  spotVideo,
+  getRandomNumberBetween,
+  getElementsOffscreenAmount,
+} from './helpers1'
 import { spotTrack, moveAmount, spotTrackMove } from './spot--gsap'
+import { tumbleweedMove, desertTumbleweeds, desertSun } from './spot--desert'
 gsap.registerPlugin(MotionPathPlugin)
 
 export default function section1() {
@@ -51,15 +56,15 @@ export default function section1() {
       alignOrigin: [0.5, 0.5],
     },
   })
-  // gsap.set(spotContainer, {
-  //   left: '-100%',
-  // })
-  // gsap.set(spotWindow, {
-  //   x: '200%',
-  // })
-  // gsap.set(spotControls, {
-  //   bottom: '-100%',
-  // })
+  gsap.set(spotContainer, {
+    left: '-100%',
+  })
+  gsap.set(spotWindow, {
+    x: '200%',
+  })
+  gsap.set(spotControls, {
+    bottom: '-100%',
+  })
   beachWaves.forEach((wave, index) => {
     gsap.set(wave, {
       motionPath: {
@@ -69,13 +74,27 @@ export default function section1() {
       },
     })
   })
-
-  gsap.set(spotTrack, {
-    x: '-=' + moveAmount * 2,
+  desertTumbleweeds.forEach((weed, index) => {
+    gsap.set(weed, {
+      right: getElementsOffscreenAmount(weed),
+    })
   })
+
+  // gsap.set(spotTrack, {
+  //   x: '-=' + moveAmount * 2,
+  // })
 
   // ******************* PANEL-OPEN "CLICK" EVENT ****************** //
   spot__button_panelOpen.addEventListener('click', (e) => {
+    // Desert
+    sunMove(desertSun, 15).restart()
+    tumbleweedMove().restart()
+    gsap.to(desertTumbleweeds, {
+      rotate: -360,
+      duration: 5,
+      ease: 'power0',
+      repeat: -1,
+    })
     // Beach Animations
     cloudTimeline.restart()
     waveTimeline.restart()

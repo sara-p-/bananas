@@ -23,4 +23,56 @@
       }
     }
   }
+  &__sand {
+    position: absolute;
+    height: 35%;
+    width: 100%;
+    bottom: 0;
+    background: #ffcb69;
+  }
+  &__mountain {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: 80%;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  &__cactus {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    width: auto;
+    height: 80%;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  &__tumbleweed {
+    position: absolute;
+    right: 10%;
+    width: auto;
+    img {
+      height: 100%;
+    }
+    &--0 {
+      @extend .desert__tumbleweed;
+      height: 10%;
+      bottom: 23%;
+    }
+    &--1 {
+      @extend .desert__tumbleweed;
+      height: 12%;
+      bottom: 17%;
+    }
+    &--2 {
+      @extend .desert__tumbleweed;
+      height: 15%;
+      bottom: 5%;
+    }
+  }
 }
