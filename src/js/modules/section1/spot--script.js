@@ -42,7 +42,7 @@ gsap.registerPlugin(MotionPathPlugin)
 export default function section1() {
   // *************************** SPOT ANIMATION ******************** //
   const spot__button_panelOpen = document.querySelector(
-    '#spot__button--panel-open'
+    '#panel0__button--panel-open'
   )
   const spot__button_close = document.querySelector('#spot--close')
   const spot__button_playPause = document.querySelector('#spot--play')
@@ -103,12 +103,13 @@ export default function section1() {
     sunMove(mountainSun, 15).restart()
     mountainTimeline.restart()
     treeMove().restart()
+
     spotPanelMove().restart()
   })
 
   // ******************* PANEL-CLOSE "CLICK" EVENT ****************** //
   spot__button_close.addEventListener('click', (e) => {
-    // spotAnimation.pause()
+    // e.stopImmediatePropagation()
     spotPanelMove().reverse()
   })
 

@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use './variables.scss' as *;
 @use './mixins.scss' as *;
 @use './animations.scss' as *;
@@ -11,17 +12,7 @@ button,
   $self: &;
   @include clear-btn;
   @include btn-base;
-  &--image {
-    @extend .button;
-    #{$self}__figure {
-      @include absolute;
-      @include flex;
-    }
-    #{$self}__image {
-      width: 100%;
-      max-width: 60%;
-      height: auto;
-    }
+  &-image {
   }
   // Button Shapes
   &--circle {

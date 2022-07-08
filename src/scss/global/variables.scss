@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:color';
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Playfair+Display&family=Roboto&display=swap');
 
 // Fonts
@@ -7,8 +8,8 @@ $heading-font-family: 'Oswald', sans-serif;
 $special-font-family: 'Playfair Display', serif;
 
 // Font Size
-$base-font-size: 16px;
-$desktop-font-size: 16px;
+$base-font-size: 24px;
+$desktop-font-size: 24px;
 $tablet-font-size: 16px;
 $mobile-font-size: 14px;
 
@@ -27,14 +28,14 @@ $site-width-medium: 1040px;
 $site-width-small: 840px;
 
 // Spacing
-$spacing-8: 8px;
-$spacing-16: 16px;
-$spacing-24: 24px;
-$spacing-32: 32px;
-$spacing-48: 48px;
-$spacing-64: 64px;
-$spacing-120: 120px;
-$spacing-200: 200px;
+$spacing-8: 0.34rem;
+$spacing-16: 0.67rem;
+$spacing-24: 1rem;
+$spacing-32: 1.34rem;
+$spacing-48: 2rem;
+$spacing-64: 2.67rem;
+$spacing-120: 5rem;
+$spacing-200: 8.34rem;
 
 // Layout Modifier Sizes (see layout.scss)
 $sizes: 8px, 16px, 24px, 32px, 48px, 64px, 120px, 160px, 200px;
@@ -50,6 +51,48 @@ $light-purple: #eacbef;
 $light-pink: #ffa4a4;
 $red: #e74c3c;
 $base-blue: #0000ff;
+
+// Section 1
+$grey--0: #f4f3ee;
+$grey--1: #d0cdc8;
+$grey--2: #6c6460;
+$melon: #e0afa0;
+$melon--dark: color.scale($melon, $lightness: -50%);
+
+// Gemstone Backgrounds
+$background--amethyst: #af9cb3;
+$background--amethyst--dark: color.scale(
+  $background--amethyst,
+  $lightness: -40%
+);
+$background--pyrite: #d5c4a8;
+$background--pyrite--dark: color.scale($background--pyrite, $lightness: -40%);
+
+$background--dioptase: #6c9093;
+$background--dioptase--dark: color.scale(
+  $background--dioptase,
+  $lightness: -40%
+);
+$background--crystal-quartz: #cbcbcfff;
+$background--crystal-quartz--dark: color.scale(
+  $background--crystal-quartz,
+  $lightness: -20%
+);
+$background--aragonite: #fabf9b;
+$background--aragonite--dark: color.scale(
+  $background--aragonite,
+  $lightness: -20%
+);
+$background--rose-quartz: #d8a5b2;
+$background--rose-quartz--dark: color.scale(
+  $background--rose-quartz,
+  $lightness: -20%
+);
+$background--amazonite: #96bfbe;
+$background--amazonite--dark: color.scale(
+  $background--amazonite,
+  $lightness: -20%
+);
 
 //  Warm
 $warm--1: #ffcdb2;

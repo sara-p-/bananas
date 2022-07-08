@@ -22,7 +22,7 @@ p {
 
 h1,
 .h1 {
-  @include heading-style(36px);
+  @include heading-style(1.5rem);
   @include tablet-portrait-up {
     @include heading-style;
   }
@@ -38,9 +38,9 @@ h1,
 h2,
 .h2 {
   // letter-spacing: 0.02px;
-  @include heading-style(34px);
+  @include heading-style(1.4rem);
   @include tablet-portrait-up {
-    @include heading-style(48px);
+    @include heading-style(2.7rem);
   }
   &--special {
     @extend .h2;
@@ -53,9 +53,9 @@ h2,
 
 h3,
 .h3 {
-  @include heading-style(24px);
+  @include heading-style(1rem);
   @include tablet-portrait-up {
-    @include heading-style(36px);
+    @include heading-style(2.5rem);
   }
   &--special {
     @extend .h3;
@@ -68,9 +68,9 @@ h3,
 
 h4,
 .h4 {
-  @include heading-style(18px);
+  @include heading-style(0.75rem);
   @include tablet-portrait-up {
-    @include heading-style(24px);
+    @include heading-style(2rem);
   }
   &--special {
     @extend .h4;
@@ -83,9 +83,9 @@ h4,
 
 h5,
 .h5 {
-  @include heading-style(16px);
+  @include heading-style(1.6rem);
   @include tablet-portrait-up {
-    @include heading-style(24px);
+    @include heading-style(1.5rem);
   }
   &--special {
     @extend .h5;
@@ -98,7 +98,7 @@ h5,
 
 h6,
 .h6 {
-  @include heading-style(14px);
+  @include heading-style(1rem);
   &--special {
     @extend .h6;
     @include heading-style(
