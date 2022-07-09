@@ -56,15 +56,15 @@ export default function section1() {
       alignOrigin: [0.5, 0.5],
     },
   })
-  gsap.set(spotContainer, {
-    left: '-100%',
-  })
-  gsap.set(spotWindow, {
-    x: '200%',
-  })
-  gsap.set(spotControls, {
-    bottom: '-100%',
-  })
+  // gsap.set(spotContainer, {
+  //   left: '-100%',
+  // })
+  // gsap.set(spotWindow, {
+  //   x: '200%',
+  // })
+  // gsap.set(spotControls, {
+  //   bottom: '-100%',
+  // })
   beachWaves.forEach((wave, index) => {
     gsap.set(wave, {
       motionPath: {
@@ -80,9 +80,9 @@ export default function section1() {
     })
   })
 
-  // gsap.set(spotTrack, {
-  //   x: '-=' + moveAmount * 2,
-  // })
+  gsap.set(spotTrack, {
+    x: '-=' + moveAmount * 0,
+  })
 
   // ******************* PANEL-OPEN "CLICK" EVENT ****************** //
   spot__button_panelOpen.addEventListener('click', (e) => {

@@ -8,11 +8,14 @@ p span {
   font-family: $base-font-family;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
-  font-size: $base-font-size;
+  font-size: $mobile-font-size;
   -webkit-font-smoothing: antialiased;
   color: $base-font-color;
   @include tablet-portrait-up {
-    font-size: $mobile-font-size;
+    font-size: $tablet-font-size;
+  }
+  @include desktop-up {
+    font-size: $desktop-font-size;
   }
 }
 

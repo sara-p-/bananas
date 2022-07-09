@@ -54,10 +54,18 @@ $base-blue: #0000ff;
 
 // Section 1
 $grey--0: #f4f3ee;
-$grey--1: #d0cdc8;
-$grey--2: #6c6460;
+$grey--1: #c7c3bd;
+$grey--2: #a19b91;
+$grey--3: #6c6460;
 $melon: #e0afa0;
 $melon--dark: color.scale($melon, $lightness: -50%);
+
+$violet--0: #ffd6ff;
+$violet--1: #e7c6ff;
+$violet--2: #c8b6ff;
+$violet--3: #b8c0ff;
+$violet--4: #bbd0ff;
+$violet--5: #c8e7ff;
 
 // Gemstone Backgrounds
 $background--amethyst: #af9cb3;
