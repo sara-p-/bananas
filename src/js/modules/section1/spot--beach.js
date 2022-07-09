@@ -15,24 +15,6 @@ export const waveData = Data.section1.spotAnimation.waveData
 
 // ************* FUNCTIONS
 
-// sunMove - function to move the sun
-export function sunMove(element, dur = 24) {
-  const t1 = gsap.timeline({ paused: true, repeat: -1, yoyo: true })
-
-  t1.fromTo(
-    element,
-    { bottom: '-100%', scale: 1.5 },
-    {
-      bottom: '100%',
-      scale: 0.5,
-      duration: dur,
-      ease: 'power0',
-    }
-  )
-
-  return t1
-}
-
 // waveMove - function to move the waves
 export function waveMove(wave, xAmount) {
   const t1 = gsap.timeline({ repeat: -1, yoyo: true })

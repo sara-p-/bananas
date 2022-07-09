@@ -11,8 +11,10 @@ export const spotWindow = document.querySelector('.spot__window')
 export const spotControls = document.querySelector('.spot__controls')
 
 export const spotTrack = document.querySelector('.spot__track')
-export const spotBottomTrack = document.querySelector('.spot__bottom')
-export const spotTrackArray = [spotTrack, spotBottomTrack]
+export const spotTrackBackground = document.querySelector(
+  '.spot__background-track'
+)
+export const spotTrackArray = [spotTrack, spotTrackBackground]
 export const spot = document.querySelector('.spot__item')
 export const pathForward = document.querySelector('.spot__path--forward')
 export const pathReverse = document.querySelector('.spot__path--reverse')
@@ -87,8 +89,8 @@ export function spotMoveIntro() {
     spotTrackArray,
     {
       x: spotTrackMove,
-      duration: 1,
-      stagger: 0.1,
+      duration: 2,
+      stagger: 0.5,
       ease: 'expo',
     },
     '<75%'
@@ -135,8 +137,8 @@ export function spotMoveEnd() {
     spotTrackArray,
     {
       x: spotTrackMoveBack,
-      duration: 1,
-      stagger: 0.1,
+      duration: 2,
+      stagger: 0.5,
       ease: 'expo',
     },
     '<75%'
@@ -152,6 +154,26 @@ export function spotMoveEnd() {
       },
     },
     '<60%'
+  )
+
+  return t1
+}
+
+// sunMove - function to move the sun
+export function sunMove(dur = 24) {
+  const sun = document.querySelector('.spot__sun-svg')
+
+  const t1 = gsap.timeline({ paused: true, repeat: -1, yoyo: true })
+
+  t1.fromTo(
+    sun,
+    { bottom: '-100%', scale: 1.5 },
+    {
+      bottom: '100%',
+      scale: 0.5,
+      duration: dur,
+      ease: 'power0',
+    }
   )
 
   return t1

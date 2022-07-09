@@ -78,7 +78,7 @@
   &__play {
     @include absolute;
     border: none;
-    border-radius: 8px;
+    border-radius: $base-border-radius;
     font-size: 5rem;
     height: 100%;
     width: 100%;
@@ -89,6 +89,9 @@
     z-index: 2;
     &.dark {
       opacity: 1;
+    }
+    &.moving {
+      opacity: 0;
     }
     &:hover {
       color: $white--5;
@@ -110,13 +113,33 @@
     @include flex($dir: column);
     z-index: 2;
   }
-  &__track {
+  &__track,
+  &__background-track {
     position: absolute;
     width: calc(100% * 3);
     top: 0;
     left: 0;
     height: 100%;
     @include flex($wrap: nowrap);
+  }
+  &__sun {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include flex;
+    &-svg {
+      position: relative;
+      width: 40%;
+      height: auto;
+      background-image: url('../../images/section1/spot-animation/beach/beach--sun.svg');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      &:before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
   }
 
   &__item {
@@ -150,7 +173,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: $white;
     overflow: hidden;
   }
   &__video {

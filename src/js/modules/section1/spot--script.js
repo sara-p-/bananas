@@ -6,6 +6,7 @@ import {
   spotPanelMove,
   spotContainer,
   spotWindow,
+  sunMove,
   spotControls,
   spotWrapper,
   pathForward,
@@ -18,7 +19,6 @@ import {
   waveMove,
   waveData,
   beachWaves,
-  sunMove,
   beachSun,
   beachClouds,
   cloudTimeline,
@@ -57,12 +57,12 @@ export default function section1() {
       alignOrigin: [0.5, 0.5],
     },
   })
-  // gsap.set(spotContainer, {
-  //   left: '-100%',
-  // })
-  // gsap.set(spotWindow, {
-  //   x: '200%',
-  // })
+  gsap.set(spotContainer, {
+    left: '-100%',
+  })
+  gsap.set(spotWindow, {
+    x: '200%',
+  })
   desertTumbleweeds.forEach((weed, index) => {
     gsap.set(weed, {
       right: getElementsOffscreenAmount(weed),
@@ -77,8 +77,9 @@ export default function section1() {
 
   // ******************* PANEL-OPEN "CLICK" EVENT ****************** //
   spot__button_panelOpen.addEventListener('click', (e) => {
+    // Sun
+    sunMove(15).restart()
     // Desert
-    sunMove(desertSun, 15).restart()
     tumbleweedMove().restart()
     gsap.to(desertTumbleweeds, {
       rotate: -360,
@@ -89,9 +90,7 @@ export default function section1() {
     // Beach Animations
     cloudTimeline.restart()
     waveTimeline.restart()
-    sunMove(beachSun).restart()
     // Mountain Animations
-    sunMove(mountainSun, 15).restart()
     mountainTimeline.restart()
     treeMove().restart()
 
@@ -100,11 +99,18 @@ export default function section1() {
 
   // ******************* PANEL-CLOSE "CLICK" EVENT ****************** //
   spot__button_close.addEventListener('click', (e) => {
-    // e.stopImmediatePropagation()
+    e.stopPropagation()
     spotPanelMove().reverse()
   })
 
   // ******************* PANEL-PLAY/PAUSE "CLICK" EVENT ****************** //
+  // spot__button_playPause.addEventListener('mousemove', (e) => {
+  //   spotPlayOverlay(true)
+  //   setTimeout(() => {
+  //     console.log('2000 ms')
+  //     spotPlayOverlay(false)
+  //   }, 2000)
+  // })
   spot__button_playPause.addEventListener('click', (e) => {
     if (spot__button_playPause.dataset.playState == 'paused') {
       spotAnimation.resume()

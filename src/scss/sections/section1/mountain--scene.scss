@@ -1,9 +1,13 @@
 @use '../../global/variables.scss' as *;
 @use '../../global/mixins.scss' as *;
 
+.background--mountains {
+  background: #7b9eaa;
+}
+
 // Box 2 - Mountains
 .mountain {
-  background: #7b9eaa;
+  background: transparent;
   &__sun {
     position: absolute;
     width: 100%;
