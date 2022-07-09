@@ -31,3 +31,14 @@ export function getElementWidth(element) {
 export function getElementsOffscreenAmount(element) {
   return -Math.abs(element.offsetWidth)
 }
+
+// spotPlayButton -
+export function spotPlayOverlay(overlayDark = false) {
+  const spotPlay = document.querySelector('.spot__play')
+
+  if (overlayDark) {
+    spotPlay.classList.add('dark')
+  } else {
+    spotPlay.classList.remove('dark')
+  }
+}

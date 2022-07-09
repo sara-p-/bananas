@@ -8,8 +8,6 @@ gsap.registerPlugin(MotionPathPlugin)
 export const spotContainer = document.querySelector('.spot')
 export const spotWrapper = document.querySelector('.spot__wrapper')
 export const spotWindow = document.querySelector('.spot__window')
-export const spotInnerWindow = document.querySelector('.spot__inner-window')
-export const spotWindowArray = [spotWindow, spotInnerWindow]
 export const spotControls = document.querySelector('.spot__controls')
 
 export const spotTrack = document.querySelector('.spot__track')
@@ -42,7 +40,7 @@ export function spotPanelMove() {
     }
   )
   t1.fromTo(
-    spotWindowArray,
+    spotWindow,
     {
       x: '200%',
     },
@@ -50,18 +48,16 @@ export function spotPanelMove() {
       x: '0%',
       duration: 2,
       ease: 'expo.inOut',
-      // delay: 0.3,
-      stagger: 0.005,
     },
     '<'
   )
   t1.fromTo(
     spotControls,
     {
-      bottom: '-100%',
+      y: 0,
     },
     {
-      bottom: '0%',
+      y: '120%',
       ease: 'expo',
       duration: 1,
     },

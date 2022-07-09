@@ -3,7 +3,7 @@
 
 // Box 0 - Beach
 .beach {
-  background: #978cad;
+  background: #bed3d1;
   &__cloud {
     position: absolute;
     height: auto;
@@ -65,8 +65,8 @@
   &__sand {
     position: absolute;
     width: 100%;
-    height: 25px;
-    background: #d6c0b2;
+    height: 150px;
+    background: #f7ecaa;
     bottom: 0;
     left: 0;
   }
@@ -76,7 +76,7 @@
     max-width: 312px;
     height: 90%;
     max-height: 447px;
-    bottom: 0;
+    bottom: 20px;
     background-size: contain;
     background-repeat: no-repeat;
     &--left {
@@ -91,12 +91,12 @@
     }
   }
   &__wave {
-    width: 110%;
+    width: 150%;
     position: absolute;
-    bottom: 20px;
-    height: 75px;
+    bottom: 150px;
+    left: -200px;
+    height: 30px;
     &-wrapper {
-      background: #539696;
       position: relative;
       width: 100%;
       height: 100%;
@@ -106,32 +106,40 @@
         width: 100%;
         height: 100%;
         // top: -100%;
-        background-image: url('../../images/section1/spot-animation/beach/path--wave--2.svg');
         background-repeat: repeat-x;
+        background-size: 70px;
+        top: -12px;
       }
     }
     &--0 {
       @extend .beach__wave;
-      .beach__wave-wrapper:after {
-        background-size: 70px;
-        top: -35px;
+      bottom: 200px;
+      .beach__wave-wrapper {
+        background: #2d5e6d;
+        &:after {
+          background-image: url('../../images/section1/spot-animation/beach/beach--wave--2.svg');
+        }
       }
     }
     &--1 {
       @extend .beach__wave;
-      // height: 45px;
-      // left: -25px;
-      .beach__wave-wrapper:after {
-        background-size: 50px;
-        top: -25px;
+      bottom: 175px;
+      left: auto;
+      right: -200px;
+      .beach__wave-wrapper {
+        background: #5b8499;
+        &:after {
+          background-image: url('../../images/section1/spot-animation/beach/beach--wave--1.svg');
+        }
       }
     }
     &--2 {
       @extend .beach__wave;
-      // height: 30px;
-      .beach__wave-wrapper:after {
-        background-size: 40px;
-        top: -20px;
+      background: #99bfbf;
+      .beach__wave-wrapper {
+        &:after {
+          background-image: url('../../images/section1/spot-animation/beach/beach--wave--0.svg');
+        }
       }
     }
   }
@@ -140,8 +148,7 @@
     width: 100%;
     height: 50px;
     left: 0;
-    bottom: 40px;
-    z-index: 5;
+    bottom: 100px;
   }
   &__svg-wrapper {
     position: relative;

@@ -110,6 +110,12 @@
         <!-- Panel0 Animation (spot) -->
         <div class="spot">
           <div class="spot__wrapper">
+            <button
+              id="spot--close"
+              class="button--spot-panel-close icon--arrow-left-long spot__close"
+            >
+              <span class="visually-hidden">Close</span>
+            </button>
             <!-- Spot Window -->
             <div class="spot__frame">
               <div class="spot__window">
@@ -136,13 +142,12 @@
                           d="M0,.5c174.34,0,317.29,324.34,330.84,558l-.68,0C343.7,324.87,486.65.5,661,.5"
                         />
                       </svg>
-
                       <div class="spot__item"></div>
                     </div>
                   </div>
                   <div class="spot__track">
                     <!-- Beach Scene -->
-                    <div id="spot-box-0" class="spot__box spot__box--0 beach">
+                    <div id="beach--scene" class="spot__box spot__box--0 beach">
                       <!-- Sun -->
                       <div class="beach__sun">
                         <div class="beach__sun-svg"></div>
@@ -200,12 +205,12 @@
                       <div class="beach__wave beach__wave--2">
                         <div class="beach__wave-wrapper"></div>
                       </div>
+                      <!-- Sand -->
+                      <div class="beach__sand"></div>
                       <!-- Palm Left -->
                       <div class="beach__palm--left"></div>
                       <!-- Palm Right -->
                       <div class="beach__palm--right"></div>
-                      <!-- Sand -->
-                      <div class="beach__sand"></div>
                       <!-- Beach SVG Path -->
                       <div class="beach__svg-box">
                         <div class="beach__svg-wrapper">
@@ -279,7 +284,10 @@
                       </div>
                     </div>
                     <!-- Desert Scene -->
-                    <div class="spot__box spot__box--2 desert">
+                    <div
+                      id="desert--scene"
+                      class="spot__box spot__box--2 desert"
+                    >
                       <!-- Sun -->
                       <div class="desert__sun">
                         <div class="beach__sun-svg"></div>
@@ -327,25 +335,16 @@
                       </div>
                     </div>
                   </div>
-                  <div class="spot__bottom"></div>
                 </div>
+                <!-- Spot Controls -->
+                <button
+                  id="spot--play"
+                  class="button--pink icon--play spot__play dark"
+                  data-play-state="paused"
+                >
+                  <span class="visually-hidden">Play/Pause</span>
+                </button>
               </div>
-            </div>
-            <!-- Spot Controls -->
-            <div class="spot__controls">
-              <button
-                id="spot--play"
-                class="button--pink icon--play spot__play"
-                data-play-state="paused"
-              >
-                <span class="visually-hidden">Pause</span>
-              </button>
-              <button
-                id="spot--close"
-                class="button--pink icon--xmark spot__close"
-              >
-                <span class="visually-hidden">Close</span>
-              </button>
             </div>
           </div>
         </div>

@@ -59,4 +59,10 @@
       content: '\f04b';
     }
   }
+  &--arrow-left-long {
+    @extend .icon;
+    &:after {
+      content: '\f177';
+    }
+  }
 }

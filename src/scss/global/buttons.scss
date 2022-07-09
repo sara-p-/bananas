@@ -12,39 +12,4 @@ button,
   $self: &;
   @include clear-btn;
   @include btn-base;
-  &-image {
-  }
-  // Button Shapes
-  &--circle {
-    @extend .button;
-    border-radius: 50%;
-  }
-  // Button Colors
-  &--pink {
-    @extend .button;
-    background: $pink;
-    color: $white;
-    &:hover,
-    &:focus {
-      background: $blue;
-      color: $white;
-    }
-  }
-  &--blue {
-    @extend .button;
-    border: none;
-    background: $pink;
-    color: $white;
-    &:hover,
-    &:focus {
-      background: $blue;
-      color: $white;
-    }
-  }
-  &--hover--blue-stripes {
-    @extend .button;
-    border: none;
-    overflow: hidden;
-    @include button-background-slide;
-  }
 }

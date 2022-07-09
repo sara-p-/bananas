@@ -34,16 +34,12 @@ export function sunMove(element, dur = 24) {
 }
 
 // waveMove - function to move the waves
-export function waveMove(wave, alignY = 0.4, duration = 2) {
+export function waveMove(wave, xAmount) {
   const t1 = gsap.timeline({ repeat: -1, yoyo: true })
 
   t1.to(wave, {
-    motionPath: {
-      path: beachWavePath,
-      align: beachWavePath,
-      alignOrigin: [0.5, alignY],
-    },
-    duration: duration,
+    x: xAmount,
+    duration: 4,
     ease: 'power0',
   })
 
@@ -52,14 +48,12 @@ export function waveMove(wave, alignY = 0.4, duration = 2) {
 
 // WavesTimeline
 export const waveTimeline = gsap.timeline({
-  repeat: -1,
-  yoyo: true,
   paused: true,
 })
 beachWaves.forEach((wave, index) => {
   waveTimeline.add(
-    waveMove(wave, waveData[index].align, waveData[index].duration),
-    waveData[index].delay
+    waveMove(wave, waveData[index].xAmount, waveData[index].duration),
+    '<'
   )
 })
 

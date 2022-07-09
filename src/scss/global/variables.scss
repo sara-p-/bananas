@@ -60,6 +60,13 @@ $grey--3: #6c6460;
 $melon: #e0afa0;
 $melon--dark: color.scale($melon, $lightness: -50%);
 
+$white--0: #fbfbf2;
+$white--1: #e5e6e4;
+$white--2: #cfd2cd;
+$white--3: #a6a2a2;
+$white--4: #847577;
+$white--5: #413a3b;
+
 $violet--0: #ffd6ff;
 $violet--1: #e7c6ff;
 $violet--2: #c8b6ff;
@@ -143,6 +150,9 @@ $btn-border-radius: 0;
 // Border
 $base-border-color: $black;
 $base-border: 2px solid $base-border-color;
+
+// Border Radius
+$base-border-radius: 4px;
 
 // Background Colors
 $viewport-background-color: $white;

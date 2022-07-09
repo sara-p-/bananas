@@ -4,17 +4,17 @@
       "videos": ["4XeNRxrjJfw", "LydoK7hXKbs", "1Ef9CAZ3OrQ"],
       "waveData": [
         {
-          "align": 0.3,
+          "xAmount": 100,
           "delay": ">",
           "duration": 6
         },
         {
-          "align": -0.1,
+          "xAmount": -100,
           "delay": "<1.3",
           "duration": 5
         },
         {
-          "align": -0.4,
+          "xAmount": 100,
           "delay": "<1.8",
           "duration": 4
         }

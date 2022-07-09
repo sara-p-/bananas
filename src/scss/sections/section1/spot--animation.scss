@@ -15,37 +15,28 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: $violet--0;
+    background: $grey--0;
+    border-right: 5px solid $white--4;
     // @include background--checkers;
     // @include flex($dir: column);
   }
-  &__controls {
-    position: relative;
-    width: 100%;
-    flex: 1;
-    height: 200px;
-    padding: $spacing-8;
-    background: $violet--3;
-  }
-  &__close,
-  &__play {
-    padding: 0 $spacing-32;
-    border: none;
-    border-radius: 8px;
-    font-size: 40px;
-    height: 100%;
-    margin-right: 5px;
-    background-color: $violet--4;
-    transition: background-color 0s, box-shadow 0s, transform 300ms;
-    color: $black;
+  &__close {
+    @include clear-btn;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+    color: $white--4;
+    padding: 0.5rem 1rem;
+    z-index: 1;
     &:hover,
     &:focus {
-      background-color: color.scale($violet--4, $lightness: -10%);
-      box-shadow: $box-shadow-inset;
+      background: transparent;
+      color: $white--5;
     }
   }
   &__frame {
-    height: calc(100% - 200px);
+    height: 100%;
     width: 100%;
     padding: 100px;
     position: relative;
@@ -57,18 +48,16 @@
     height: 100%;
     max-height: 800px;
     position: relative;
-    background: $violet--2;
-    border-radius: 6px;
+    background: $white--1;
+    border-radius: $base-border-radius;
     box-shadow: $box-shadow;
     @include flex;
-    // transform: translateX(200%);
     &:before {
       content: '';
       width: 1px;
       margin-left: -1px;
       float: left;
       height: 0;
-      // padding-top: 591.44px / 1127.34px * 100%;
       padding-top: 50%;
     }
     &:after {
@@ -80,28 +69,39 @@
   }
   &__inner-window {
     position: relative;
-    width: calc(100% - (45px * 2));
-    height: calc(100% - (45px * 2));
-    border-radius: 6px;
-    box-shadow: $box-shadow-inset;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    background: $white;
-    // transform: translateX(200%);
-
-    &:after {
-      content: '';
-      @include absolute;
-      // @include overlay--tv-screen;
-      // background: url('../../images/background--diagonal-stripe--green.svg');
-      // background-size: 75px;
-      // background-repeat: repeat;
+    border-radius: $base-border-radius;
+    box-shadow: $box-shadow-inset;
+  }
+  &__play {
+    @include absolute;
+    border: none;
+    border-radius: 8px;
+    font-size: 5rem;
+    height: 100%;
+    width: 100%;
+    background: rgba(54, 54, 54, 0.8);
+    transition: background-color 0s, box-shadow 0s, transform 300ms;
+    color: $white--0;
+    opacity: 0;
+    z-index: 2;
+    &.dark {
+      opacity: 1;
+    }
+    &:hover {
+      color: $white--5;
+      background: transparent;
+      opacity: 1;
+      // box-shadow: $box-shadow-inset;
+    }
+    &:focus {
+      @include focus($white--0);
     }
   }
-
   &__vectors {
     @include absolute;
-    box-shadow: $box-shadow-inset;
-    border-radius: 7%;
   }
   &__content {
     position: relative;
@@ -118,28 +118,11 @@
     height: 100%;
     @include flex($wrap: nowrap);
   }
-  // &__bottom {
-  //   position: absolute;
-  //   width: calc(100% * 3);
-  //   bottom: 0;
-  //   left: 0;
-  //   height: 25px;
-  //   background-color: $purple;
-  //   z-index: 1;
-  //   // &:after {
-  //   //   content: '';
-  //   //   @include absolute;
-  //   //   top: -21px;
-  //   //   background: url('../../images/border--circle--purple.svg');
-  //   //   background-size: 50px;
-  //   //   background-repeat: repeat-x;
-  //   // }
-  // }
+
   &__item {
     width: 64px;
     height: 64px;
-    background: $yellow;
-    border: 10px solid $black;
+    background: $white--0;
     box-shadow: $box-shadow;
     border-radius: 48px;
   }
