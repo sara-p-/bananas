@@ -67,12 +67,12 @@ $white--3: #a6a2a2;
 $white--4: #847577;
 $white--5: #413a3b;
 
-$violet--0: #ffd6ff;
-$violet--1: #e7c6ff;
-$violet--2: #c8b6ff;
-$violet--3: #b8c0ff;
-$violet--4: #bbd0ff;
-$violet--5: #c8e7ff;
+// Beach Scene
+$beach--1: #bed3d1;
+$beach--2: #9ebdba;
+$beach--3: #79a4a0;
+$beach--4: #5b8681;
+$beach--5: #42615d;
 
 // Gemstone Backgrounds
 $background--amethyst: #af9cb3;
@@ -109,27 +109,6 @@ $background--amazonite--dark: color.scale(
   $lightness: -20%
 );
 
-//  Warm
-$warm--1: #ffcdb2;
-$warm--2: #ffb4a2;
-$warm--3: #e5989b;
-$warm--4: #b5838d;
-$warm--5: #6d6875;
-
-// Bananas Colors
-$purple: #9b5de5;
-$pink: #f15bb5;
-$yellow: #fee440;
-$blue: #00bbf9;
-$green: #00f5d4;
-
-// Chill Colors
-$color-0: #edede9;
-$color-1: #d6ccc2;
-$color-2: #f5ebe0;
-$color-3: #e3d5ca;
-$color-4: #d5bdaf;
-
 $links: $black;
 $hover: $black;
 
@@ -158,7 +137,7 @@ $base-border-radius: 4px;
 $viewport-background-color: $white;
 
 // Focus
-$focus-outline-color: $purple;
+$focus-outline-color: $black;
 $focus-outline-width: 3px;
 $focus-outline: $focus-outline-width solid $focus-outline-color;
 $focus-outline-offset: 3px;

@@ -4,25 +4,13 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin.js'
 import {
   spotAnimationMaster,
   spotPanelMove,
-  spotContainer,
-  spotWindow,
   sunMove,
-  spotControls,
-  spotWrapper,
-  pathForward,
   pathReverse,
   spot,
+  spotContainer,
+  spotWindow,
 } from './spot--gsap'
-import {
-  beachWavePath,
-  waveTimeline,
-  waveMove,
-  waveData,
-  beachWaves,
-  beachSun,
-  beachClouds,
-  cloudTimeline,
-} from './spot--beach'
+import { waveTimeline, cloudTimeline } from './spot--beach'
 import Data from '../../json/section1.json'
 import {
   mountainSun,
@@ -31,10 +19,11 @@ import {
   treeMove,
 } from './spot--mountains'
 import {
-  spotVideo,
-  getRandomNumberBetween,
   getElementsOffscreenAmount,
   spotPlayOverlay,
+  spotPlayStart,
+  removeOverlay,
+  debouncedMouseMove,
 } from './helpers1'
 import { spotTrack, moveAmount, spotTrackMove } from './spot--gsap'
 import { tumbleweedMove, desertTumbleweeds, desertSun } from './spot--desert'
@@ -69,7 +58,8 @@ export default function section1() {
     })
   })
 
-  spotPlayOverlay(true)
+  // Start the "video" with a blur
+  spotPlayStart(true)
 
   // gsap.set(spotTrack, {
   //   x: '-=' + moveAmount * 2,
@@ -100,27 +90,26 @@ export default function section1() {
   // ******************* PANEL-CLOSE "CLICK" EVENT ****************** //
   spot__button_close.addEventListener('click', (e) => {
     e.stopPropagation()
+    spotAnimation.pause()
     spotPanelMove().reverse()
   })
 
-  // ******************* PANEL-PLAY/PAUSE "CLICK" EVENT ****************** //
-  // spot__button_playPause.addEventListener('mousemove', (e) => {
-  //   spotPlayOverlay(true)
-  //   setTimeout(() => {
-  //     console.log('2000 ms')
-  //     spotPlayOverlay(false)
-  //   }, 2000)
-  // })
+  // ******************* PANEL-PLAY/PAUSE MOUSE EVENTS ****************** //
+  spot__button_playPause.addEventListener('mousemove', (e) => {
+    spotPlayOverlay(true)
+    debouncedMouseMove()
+  })
   spot__button_playPause.addEventListener('click', (e) => {
     if (spot__button_playPause.dataset.playState == 'paused') {
       spotAnimation.resume()
-      spotPlayOverlay(false)
-      spot__button_playPause.classList.replace('icon--play', 'icon--pause')
+      spotPlayStart(false)
+      spot__button_playPause.classList.replace('show-play', 'show-pause')
       spot__button_playPause.setAttribute('data-play-state', 'playing')
     } else {
       // spotPlayOverlay(false)
       spotAnimation.pause()
-      spot__button_playPause.classList.replace('icon--pause', 'icon--play')
+      // spotPlayStart(true)
+      spot__button_playPause.classList.replace('show-pause', 'show-play')
       spot__button_playPause.setAttribute('data-play-state', 'paused')
     }
   })

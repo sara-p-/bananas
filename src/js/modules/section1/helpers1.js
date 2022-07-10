@@ -1,4 +1,5 @@
 import YouTubePlayer from 'youtube-player'
+import { debounce } from 'debounce'
 
 export function spotVideo(target, id) {
   let player
@@ -32,13 +33,44 @@ export function getElementsOffscreenAmount(element) {
   return -Math.abs(element.offsetWidth)
 }
 
-// spotPlayButton -
-export function spotPlayOverlay(overlayDark = false) {
-  const spotPlay = document.querySelector('.spot__play')
+// ********************** Spot Animation "video controls" hover effects ******************* //
+// spotPlayOverlay - If true, the class 'inactive' is added to
 
-  if (overlayDark) {
-    spotPlay.classList.add('dark')
+export function spotPlayOverlay(overlayState = false) {
+  const spotPlay = document.querySelector('.spot__play')
+  const innerWindow = document.querySelector('.spot__inner-window')
+
+  if (overlayState) {
+    spotPlay.classList.remove('inactive')
+    // innerWindow.classList.add('blur')
   } else {
-    spotPlay.classList.remove('dark')
+    spotPlay.classList.add('inactive')
+    // innerWindow.classList.remove('blur')
   }
 }
+
+export function spotPlayStart(blur = true) {
+  const innerWindow = document.querySelector('.spot__inner-window')
+
+  if (blur) {
+    innerWindow.classList.add('blur')
+  } else {
+    innerWindow.classList.remove('blur')
+  }
+
+  return blur
+}
+
+// Trying to combine the functions above but can't quite do it yet. For reasons.
+export function toggleHover(element, className, active = false) {
+  if (active) {
+    element.classList.add(className)
+  } else {
+    element.classList.remove(className)
+  }
+}
+
+export function removeOverlay() {
+  spotPlayOverlay(false)
+}
+export let debouncedMouseMove = debounce(removeOverlay, 500)

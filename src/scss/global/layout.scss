@@ -33,7 +33,7 @@ main {
 .frame {
   position: fixed;
   pointer-events: none;
-  background: $warm--3;
+  background: $white--0;
   z-index: 5;
   &--top {
     @extend .frame;
@@ -237,8 +237,5 @@ main {
   }
   &--base-blue {
     background: $base-blue;
-  }
-  &--blue {
-    background: $blue;
   }
 }

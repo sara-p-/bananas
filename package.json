@@ -37,6 +37,7 @@
     ]
   },
   "dependencies": {
+    "debounce": "^1.2.1",
     "fibers": "^5.0.1",
     "gsap": "npm:@gsap/simply@^3.10.4",
     "json-loader": "^0.5.7",
