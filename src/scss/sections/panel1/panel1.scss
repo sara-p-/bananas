@@ -1,0 +1,14 @@
+@use '../../global/variables.scss' as *;
+@use '../../global/mixins.scss' as *;
+
+.panel1 {
+  @include absolute;
+  background: $grey--0;
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include flex;
+    padding: 0 1rem;
+  }
+}

@@ -2,6 +2,18 @@
 @use 'sass:color';
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Playfair+Display&family=Roboto&display=swap');
 
+:root,
+[data-theme='default'] {
+  // Colors
+  --black: #363636;
+  --white: #ffffff;
+  --color0: #fbfbf2;
+  --color1: #e5e6e4;
+  --color2: #cfd2cd;
+  --color3: #a6a2a2;
+  --color4: #847577;
+  --color5: #413a3b;
+}
 // Fonts
 $base-font-family: 'Roboto', sans-serif;
 $heading-font-family: 'Oswald', sans-serif;

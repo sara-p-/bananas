@@ -12,12 +12,7 @@ import {
 } from './spot--gsap'
 import { waveTimeline, cloudTimeline } from './spot--beach'
 import Data from '../../json/section1.json'
-import {
-  mountainSun,
-  mountainTimeline,
-  treeTimeline,
-  treeMove,
-} from './spot--mountains'
+import { mountainTimeline, treeTimeline, treeMove } from './spot--mountains'
 import {
   getElementsOffscreenAmount,
   spotPlayOverlay,
@@ -46,12 +41,12 @@ export default function section1() {
       alignOrigin: [0.5, 0.5],
     },
   })
-  gsap.set(spotContainer, {
-    left: '-100%',
-  })
-  gsap.set(spotWindow, {
-    x: '200%',
-  })
+  // gsap.set(spotContainer, {
+  //   left: '-100%',
+  // })
+  // gsap.set(spotWindow, {
+  //   x: '200%',
+  // })
   desertTumbleweeds.forEach((weed, index) => {
     gsap.set(weed, {
       right: getElementsOffscreenAmount(weed),
@@ -85,12 +80,18 @@ export default function section1() {
     treeMove().restart()
 
     spotPanelMove().restart()
+
+    // setTimeout(() => {
+    //   console.log('5000 ms')
+    //   spotPanelMove().reverse()
+    // }, 5000)
   })
 
   // ******************* PANEL-CLOSE "CLICK" EVENT ****************** //
   spot__button_close.addEventListener('click', (e) => {
+    console.log('click')
     e.stopPropagation()
-    spotAnimation.pause()
+    // spotAnimation.pause()
     spotPanelMove().reverse()
   })
 

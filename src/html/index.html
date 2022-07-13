@@ -107,262 +107,265 @@
             </button>
           </div>
         </div>
-        <!-- Panel0 Animation (spot) -->
-        <div class="spot">
-          <div class="spot__wrapper">
-            <button
-              id="spot--close"
-              class="button--spot-panel-close icon--arrow-left-long spot__close"
-            >
-              <span class="visually-hidden">Close</span>
-            </button>
-            <!-- Spot Window -->
-            <div class="spot__frame">
-              <div class="spot__window">
-                <div class="spot__inner-window">
-                  <div class="spot__vectors">
-                    <div class="spot__content">
-                      <svg
-                        class="spot__svg"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 661 559.06"
-                      >
-                        <path
-                          class="spot__path--reverse"
-                          d="M660.5.5c-174.21,0-317,330.14-330.59,568l.68,0C317.06,330.67,174.22.5,0,.5"
-                        />
-                      </svg>
-                      <svg
-                        class="spot__svg"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 661 559.06"
-                      >
-                        <path
-                          class="spot__path--forward"
-                          d="M0,.5c174.34,0,317.29,324.34,330.84,558l-.68,0C343.7,324.87,486.65.5,661,.5"
-                        />
-                      </svg>
-                      <div class="spot__item"></div>
-                    </div>
+      </section>
+      <!-- Panel0 Animation (spot) -->
+      <div class="spot">
+        <div class="spot__wrapper">
+          <button
+            id="spot--close"
+            class="button--spot-panel-close icon--arrow-left-long spot__close"
+          >
+            <span class="visually-hidden">Close</span>
+          </button>
+          <!-- Spot Window -->
+          <div class="spot__frame">
+            <div class="spot__window">
+              <div class="spot__inner-window">
+                <div class="spot__vectors">
+                  <div class="spot__content">
+                    <svg
+                      class="spot__svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 661 559.06"
+                    >
+                      <path
+                        class="spot__path--reverse"
+                        d="M660.5.5c-174.21,0-317,330.14-330.59,568l.68,0C317.06,330.67,174.22.5,0,.5"
+                      />
+                    </svg>
+                    <svg
+                      class="spot__svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 661 559.06"
+                    >
+                      <path
+                        class="spot__path--forward"
+                        d="M0,.5c174.34,0,317.29,324.34,330.84,558l-.68,0C343.7,324.87,486.65.5,661,.5"
+                      />
+                    </svg>
+                    <div class="spot__item"></div>
                   </div>
-                  <div class="spot__background-track">
-                    <div class="spot__box background-box--beach">
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
+                </div>
+                <div class="spot__background-track">
+                  <div class="spot__box background-box--beach"></div>
+                  <div class="spot__box background-box--mountains"></div>
+                  <div class="spot__box background-box--desert"></div>
+                </div>
+                <div class="spot__sun">
+                  <div class="spot__sun-svg"></div>
+                </div>
+                <div class="spot__track">
+                  <!-- Beach Scene -->
+                  <div id="beach--scene" class="spot__box spot__box--0 beach">
+                    <!-- Cloud 0 -->
+                    <div class="beach__cloud beach__cloud--0">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--0.svg')%>"
+                        alt="Cloud #1"
+                        class="cloud-image image--contain"
+                      />
                     </div>
-                    <div class="spot__box background-box--mountains">
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
+                    <!-- Cloud 2 -->
+                    <div class="beach__cloud beach__cloud--2">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--2.svg')%>"
+                        alt="Cloud #3"
+                        class="cloud-image image--contain"
+                      />
                     </div>
-                    <div class="spot__box background-box--desert">
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
-                      <div class="background-box__bar"></div>
+                    <!-- Cloud 3 -->
+                    <div class="beach__cloud beach__cloud--3">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--3.svg')%>"
+                        alt="Cloud #4"
+                        class="cloud-image image--contain"
+                      />
                     </div>
-                  </div>
-                  <div class="spot__sun">
-                    <div class="spot__sun-svg"></div>
-                  </div>
-                  <div class="spot__track">
-                    <!-- Beach Scene -->
-                    <div id="beach--scene" class="spot__box spot__box--0 beach">
-                      <!-- Cloud 0 -->
-                      <div class="beach__cloud beach__cloud--0">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--0.svg')%>"
-                          alt="Cloud #1"
-                          class="cloud-image image--contain"
-                        />
-                      </div>
-                      <!-- Cloud 2 -->
-                      <div class="beach__cloud beach__cloud--2">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--2.svg')%>"
-                          alt="Cloud #3"
-                          class="cloud-image image--contain"
-                        />
-                      </div>
-                      <!-- Cloud 3 -->
-                      <div class="beach__cloud beach__cloud--3">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--3.svg')%>"
-                          alt="Cloud #4"
-                          class="cloud-image image--contain"
-                        />
-                      </div>
-                      <!-- Cloud 1 -->
-                      <div class="beach__cloud beach__cloud--1">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--1.svg')%>"
-                          alt="Cloud #2"
-                          class="cloud-image image--contain"
-                        />
-                      </div>
-                      <!-- Cloud 4 -->
-                      <div class="beach__cloud beach__cloud--4">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--4.svg')%>"
-                          alt="Cloud #5"
-                          class="cloud-image image--contain"
-                        />
-                      </div>
+                    <!-- Cloud 1 -->
+                    <div class="beach__cloud beach__cloud--1">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--1.svg')%>"
+                        alt="Cloud #2"
+                        class="cloud-image image--contain"
+                      />
+                    </div>
+                    <!-- Cloud 4 -->
+                    <div class="beach__cloud beach__cloud--4">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/beach/beach--cloud--4.svg')%>"
+                        alt="Cloud #5"
+                        class="cloud-image image--contain"
+                      />
+                    </div>
 
-                      <!-- Wave 0 -->
-                      <div class="beach__wave beach__wave--0">
-                        <div class="beach__wave-wrapper"></div>
-                      </div>
-                      <!-- Wave 1 -->
-                      <div class="beach__wave beach__wave--1">
-                        <div class="beach__wave-wrapper"></div>
-                      </div>
-                      <!-- Wave 2 -->
-                      <div class="beach__wave beach__wave--2">
-                        <div class="beach__wave-wrapper"></div>
-                      </div>
-                      <!-- Sand -->
-                      <div class="beach__sand"></div>
-                      <!-- Palm Left -->
-                      <div class="beach__palm--left"></div>
-                      <!-- Palm Right -->
-                      <div class="beach__palm--right"></div>
-                      <!-- Beach SVG Path -->
-                      <div class="beach__svg-box">
-                        <div class="beach__svg-wrapper">
-                          <svg
-                            class="beach__svg"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 69.51 9.17"
-                          >
-                            <path
-                              class="beach__wave-path"
-                              d="M69.26.43c-8.51,5.06-20.82,8.24-34.5,8.24S8.76,5.49.26.43"
-                            />
-                          </svg>
-                        </div>
+                    <!-- Wave 0 -->
+                    <div class="beach__wave beach__wave--0">
+                      <div class="beach__wave-wrapper"></div>
+                    </div>
+                    <!-- Wave 1 -->
+                    <div class="beach__wave beach__wave--1">
+                      <div class="beach__wave-wrapper"></div>
+                    </div>
+                    <!-- Wave 2 -->
+                    <div class="beach__wave beach__wave--2">
+                      <div class="beach__wave-wrapper"></div>
+                    </div>
+                    <!-- Sand -->
+                    <div class="beach__sand"></div>
+                    <!-- Palm Left -->
+                    <div class="beach__palm--left"></div>
+                    <!-- Palm Right -->
+                    <div class="beach__palm--right"></div>
+                    <!-- Beach SVG Path -->
+                    <div class="beach__svg-box">
+                      <div class="beach__svg-wrapper">
+                        <svg
+                          class="beach__svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 69.51 9.17"
+                        >
+                          <path
+                            class="beach__wave-path"
+                            d="M69.26.43c-8.51,5.06-20.82,8.24-34.5,8.24S8.76,5.49.26.43"
+                          />
+                        </svg>
                       </div>
                     </div>
-                    <!-- Mountain Scene -->
-                    <div
-                      id="mountain--scene"
-                      class="spot__box spot__box--1 mountain"
-                    >
-                      <!-- Mountains -->
-                      <div class="mountain__box">
-                        <div
-                          class="mountain__image mountain__image--back"
-                        ></div>
-                        <div class="mountain__image mountain__image--mid"></div>
-                        <div
-                          class="mountain__image mountain__image--front"
-                        ></div>
-                      </div>
-                      <!-- Trees -->
-                      <div class="mountain__tree mountain__tree--0">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
-                          alt=""
-                          class="image--contain"
-                        />
-                      </div>
-                      <div class="mountain__tree mountain__tree--1">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
-                          alt=""
-                          class="image--contain"
-                        />
-                      </div>
-                      <div class="mountain__tree mountain__tree--2">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
-                          alt=""
-                          class="image--contain"
-                        />
-                      </div>
-                      <div class="mountain__tree mountain__tree--3">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
-                          alt=""
-                          class="image--contain"
-                        />
-                      </div>
-                      <div class="mountain__tree mountain__tree--4">
-                        <img
-                          src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
-                          alt=""
-                          class="image--contain"
-                        />
-                      </div>
+                  </div>
+                  <!-- Mountain Scene -->
+                  <div
+                    id="mountain--scene"
+                    class="spot__box spot__box--1 mountain"
+                  >
+                    <!-- Mountains -->
+                    <div class="mountain__box">
+                      <div class="mountain__image mountain__image--back"></div>
+                      <div class="mountain__image mountain__image--mid"></div>
+                      <div class="mountain__image mountain__image--front"></div>
                     </div>
-                    <!-- Desert Scene -->
-                    <div
-                      id="desert--scene"
-                      class="spot__box spot__box--2 desert"
-                    >
-                      <!-- Mountain -->
-                      <div class="desert__mountain">
-                        <img
-                          class="image--contain"
-                          src="<%=require('../../images/section1/spot-animation/desert/desert--mountain.svg')%>"
-                          alt="Desert Mountain"
-                        />
-                      </div>
-                      <!-- Sand -->
-                      <div class="desert__sand"></div>
-                      <!-- Tumbleweeds -->
-                      <div class="desert__tumbleweed desert__tumbleweed--0">
-                        <img
-                          class="image--contain"
-                          src="<%=require('../../images/section1/spot-animation/desert/desert--tumbleweed.svg')%>"
-                          alt="Desert Tumbleweed"
-                        />
-                      </div>
-                      <div class="desert__tumbleweed desert__tumbleweed--1">
-                        <img
-                          class="image--contain"
-                          src="<%=require('../../images/section1/spot-animation/desert/desert--tumbleweed.svg')%>"
-                          alt="Desert Tumbleweed"
-                        />
-                      </div>
-                      <!-- Cactus -->
-                      <div class="desert__cactus">
-                        <img
-                          class="image--contain"
-                          src="<%=require('../../images/section1/spot-animation/desert/desert--cactus.svg')%>"
-                          alt="Desert Cactus"
-                        />
-                      </div>
-                      <!-- Tumbleweeds -->
-                      <div class="desert__tumbleweed desert__tumbleweed--2">
-                        <img
-                          class="image--contain"
-                          src="<%=require('../../images/section1/spot-animation/desert/desert--tumbleweed.svg')%>"
-                          alt="Desert Tumbleweed"
-                        />
-                      </div>
+                    <!-- Trees -->
+                    <div class="mountain__tree mountain__tree--0">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
+                        alt=""
+                        class="image--contain"
+                      />
+                    </div>
+                    <div class="mountain__tree mountain__tree--1">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
+                        alt=""
+                        class="image--contain"
+                      />
+                    </div>
+                    <div class="mountain__tree mountain__tree--2">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
+                        alt=""
+                        class="image--contain"
+                      />
+                    </div>
+                    <div class="mountain__tree mountain__tree--3">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
+                        alt=""
+                        class="image--contain"
+                      />
+                    </div>
+                    <div class="mountain__tree mountain__tree--4">
+                      <img
+                        src="<%=require('../../images/section1/spot-animation/mountains/mountain--pine.svg')%>"
+                        alt=""
+                        class="image--contain"
+                      />
+                    </div>
+                  </div>
+                  <!-- Desert Scene -->
+                  <div id="desert--scene" class="spot__box spot__box--2 desert">
+                    <!-- Mountain -->
+                    <div class="desert__mountain">
+                      <img
+                        class="image--contain"
+                        src="<%=require('../../images/section1/spot-animation/desert/desert--mountain.svg')%>"
+                        alt="Desert Mountain"
+                      />
+                    </div>
+                    <!-- Sand -->
+                    <div class="desert__sand"></div>
+                    <!-- Tumbleweeds -->
+                    <div class="desert__tumbleweed desert__tumbleweed--0">
+                      <img
+                        class="image--contain"
+                        src="<%=require('../../images/section1/spot-animation/desert/desert--tumbleweed.svg')%>"
+                        alt="Desert Tumbleweed"
+                      />
+                    </div>
+                    <div class="desert__tumbleweed desert__tumbleweed--1">
+                      <img
+                        class="image--contain"
+                        src="<%=require('../../images/section1/spot-animation/desert/desert--tumbleweed.svg')%>"
+                        alt="Desert Tumbleweed"
+                      />
+                    </div>
+                    <!-- Cactus -->
+                    <div class="desert__cactus">
+                      <img
+                        class="image--contain"
+                        src="<%=require('../../images/section1/spot-animation/desert/desert--cactus.svg')%>"
+                        alt="Desert Cactus"
+                      />
+                    </div>
+                    <!-- Tumbleweeds -->
+                    <div class="desert__tumbleweed desert__tumbleweed--2">
+                      <img
+                        class="image--contain"
+                        src="<%=require('../../images/section1/spot-animation/desert/desert--tumbleweed.svg')%>"
+                        alt="Desert Tumbleweed"
+                      />
                     </div>
                   </div>
                 </div>
-                <!-- Spot Controls -->
-                <button
-                  id="spot--play"
-                  class="spot__play show-play"
-                  data-play-state="paused"
-                >
-                  <span class="visually-hidden">Play/Pause</span>
-                </button>
               </div>
+              <!-- Spot Controls -->
+              <button
+                id="spot--play"
+                class="spot__play show-play"
+                data-play-state="paused"
+              >
+                <span class="visually-hidden">Play/Pause</span>
+              </button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <!-- Panel1 Animation (Range Slider) -->
+      <div class="panel1">
+        <div class="panel1__wrapper">
+          <div class="range">
+            <label for="panel1--range" class="range__label visually-hidden">
+              Background Slider
+            </label>
+            <input
+              id="panel1--range"
+              class="range__input"
+              type="range"
+              name="background-range"
+              min="0"
+              max="5"
+              step="1"
+              value="0"
+            />
+            <!-- <span class="range__control">
+              <span class="range__stop"></span>
+              <span class="range__stop"></span>
+              <span class="range__stop"></span>
+              <span class="range__stop"></span>
+              <span class="range__stop"></span>
+            </span> -->
+          </div>
+        </div>
+      </div>
     </main>
     <!-- Modal--Default -->
     <div id="modal--default" class="modal modal--default" aria-hidden="true">

@@ -42,10 +42,8 @@ export function spotPlayOverlay(overlayState = false) {
 
   if (overlayState) {
     spotPlay.classList.remove('inactive')
-    // innerWindow.classList.add('blur')
   } else {
     spotPlay.classList.add('inactive')
-    // innerWindow.classList.remove('blur')
   }
 }
 

@@ -53,18 +53,6 @@ export function spotPanelMove() {
     },
     '<'
   )
-  t1.fromTo(
-    spotControls,
-    {
-      y: 0,
-    },
-    {
-      y: '120%',
-      ease: 'expo',
-      duration: 1,
-    },
-    '<50%'
-  )
 
   return t1
 }
@@ -90,8 +78,8 @@ export function spotMoveIntro() {
     {
       x: spotTrackMove,
       duration: 2,
-      stagger: 0.5,
       ease: 'expo',
+      stagger: 0.5,
     },
     '<75%'
   )
