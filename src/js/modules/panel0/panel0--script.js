@@ -24,7 +24,7 @@ import { spotTrack, moveAmount, spotTrackMove } from './spot--gsap'
 import { tumbleweedMove, desertTumbleweeds, desertSun } from './spot--desert'
 gsap.registerPlugin(MotionPathPlugin)
 
-export default function section1() {
+export default function panelZero() {
   // *************************** SPOT ANIMATION ******************** //
   const spot__button_panelOpen = document.querySelector(
     '#panel0__button--panel-open'

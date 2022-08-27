@@ -2,11 +2,13 @@ import '../scss/style.scss'
 
 // Import the General Scripts
 import modals from './modules/modals'
-import section1 from './modules/panel0/spot--script'
+import panelZero from './modules/panel0/panel0--script'
+import panelTwo from './modules/panel2/panel2--script'
 
 // *********************** Run Scripts ***************** //
 // fullScript()
 modals()
 
-// Section 1
-section1()
+// Panels
+panelZero()
+panelTwo()
